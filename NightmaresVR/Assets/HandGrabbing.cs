@@ -6,7 +6,6 @@ using UnityEngine.XR; //needs to be UnityEngine.VR in version before 2017.2
 //hand grabbing script for tutorial #2
 public class HandGrabbing : MonoBehaviour
 {
-
     public string InputName;
     public XRNode NodeType;
     public float GrabDistance = 0.1f;
@@ -27,6 +26,7 @@ public class HandGrabbing : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         //update hand position and rotation
         transform.localPosition = InputTracking.GetLocalPosition(NodeType);
         transform.localRotation = InputTracking.GetLocalRotation(NodeType);
