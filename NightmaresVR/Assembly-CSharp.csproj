@@ -204,6 +204,8 @@
      <Compile Include="Assets\Prefabs\Scripts\GUI\vp_PainHUD.cs" />
      <Compile Include="Assets\Prefabs\Scripts\GUI\vp_SimpleCrosshair.cs" />
      <Compile Include="Assets\Prefabs\Scripts\GUI\vp_SimpleHUD.cs" />
+     <Compile Include="Assets\screw.cs" />
+     <Compile Include="Assets\Screwdrivers.cs" />
      <None Include="Assets\Prefabs\Scripts\Presets\Standard\Shooter\ShooterPistolOutOfControl.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\WeaponsHD\Pistol01\ShooterPistol01OutOfControl.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Standard\Camera\CameraClimb.txt" />
@@ -281,6 +283,7 @@
      <None Include="Assets\Prefabs\Scripts\Presets\Standard\Shooter\ShooterMachinegun.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Standard\Shooter\ShooterPistolZoom.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\OldSchoolCamera.txt" />
+     <None Include="Assets\Workplace Tools\README.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\MeleeWeaponPullUpRight.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Standard\Controller\ControllerZoom.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Standard\Weapon\WeaponPistol.txt" />

@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour {
 
     public Vector3 leftHandVelocity;
     public Vector3 rightHandVelocity;
+    public int BRScrews;
 
     private void Awake()
     {
