@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/masterbedroom.unity
+- path: Assets/Scenes/Attic.unity
   isLoaded: 1
   isActive: 1
