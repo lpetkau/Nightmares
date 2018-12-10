@@ -218,7 +218,6 @@
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\HandGrabbing.cs" />
     <Compile Include="Assets\Scripts\NightlightController.cs" />
-    <Compile Include="Assets\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\screw.cs" />
     <Compile Include="Assets\Scripts\Screwdrivers.cs" />
     <None Include="Assets\Prefabs\Scripts\Presets\Standard\Shooter\ShooterPistolOutOfControl.txt" />

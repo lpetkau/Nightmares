@@ -73,6 +73,7 @@ public class vp_CapsuleController : vp_Controller
 
 		if (Player.Crouch.Active && !(MotorFreeFly && !Grounded))	// crouching & not flying
 		{
+            print("CROUCHING");
 			CapsuleCollider.height = m_NormalHeight * PhysicsCrouchHeightModifier;
 			CapsuleCollider.center = m_NormalCenter * PhysicsCrouchHeightModifier;
 		}
@@ -80,6 +81,7 @@ public class vp_CapsuleController : vp_Controller
 		{
 			CapsuleCollider.height = m_NormalHeight;
 			CapsuleCollider.center = m_NormalCenter;
+            print("NOT CROUCHING");
 		}
 
 	}
