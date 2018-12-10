@@ -19,6 +19,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.XR;
 
 [RequireComponent(typeof(CharacterController))]
 
@@ -37,13 +38,15 @@ public class vp_CharacterController : vp_Controller
 		}
 	}
 
-
-	/// <summary>
-	/// sets up various collider dimension variables for dynamic crouch
-	/// logic, depending on whether the collider is a capsule or a character
-	/// controller
-	/// </summary>
-	protected override void InitCollider()
+    
+        
+    
+    /// <summary>
+    /// sets up various collider dimension variables for dynamic crouch
+    /// logic, depending on whether the collider is a capsule or a character
+    /// controller
+    /// </summary>
+    protected override void InitCollider()
 	{
 
 		// NOTES:
@@ -54,12 +57,18 @@ public class vp_CharacterController : vp_Controller
 		m_NormalHeight = CharacterController.height;
 		CharacterController.center = m_NormalCenter = (m_NormalHeight * (Vector3.up * 0.5f));
 		CharacterController.radius = m_NormalHeight * DEFAULT_RADIUS_MULTIPLIER;
-		m_CrouchHeight = m_NormalHeight * PhysicsCrouchHeightModifier;
-		m_CrouchCenter = m_NormalCenter * PhysicsCrouchHeightModifier;
 
-		//Collider.transform.localPosition = Vector3.zero;
+        
+            m_CrouchHeight = m_NormalHeight * PhysicsCrouchHeightModifier;
+            m_CrouchCenter = m_NormalCenter * PhysicsCrouchHeightModifier;
 
-	}
+
+        
+
+
+        //Collider.transform.localPosition = Vector3.zero;
+
+    }
 
 
 	/// <summary>
@@ -68,17 +77,25 @@ public class vp_CharacterController : vp_Controller
 	/// </summary>
 	protected override void RefreshCollider()
 	{
-
-		if (Player.Crouch.Active && !(MotorFreeFly && !Grounded))	// crouching & not flying
-		{
-			CharacterController.height = m_NormalHeight * PhysicsCrouchHeightModifier;
-			CharacterController.center = m_NormalCenter * PhysicsCrouchHeightModifier;
-		}
-		else	// standing up (whether flying or not)
-		{
-			CharacterController.height = m_NormalHeight;
-			CharacterController.center = m_NormalCenter;
-		}
+        if (XRDevice.isPresent)
+        {
+            CharacterController.height = Camera.transform.position.x;
+            CharacterController.center = Camera.transform.position / 2;
+        }
+        else
+        {
+            if (Player.Crouch.Active && !(MotorFreeFly && !Grounded))	// crouching & not flying
+		    {
+			    CharacterController.height = m_NormalHeight * PhysicsCrouchHeightModifier;
+			    CharacterController.center = m_NormalCenter * PhysicsCrouchHeightModifier;
+		    }
+		    else	// standing up (whether flying or not)
+		    {
+			    CharacterController.height = m_NormalHeight;
+			    CharacterController.center = m_NormalCenter;
+		    }
+        }
+		
 
 	}
 
