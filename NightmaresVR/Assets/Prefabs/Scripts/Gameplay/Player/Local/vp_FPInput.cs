@@ -12,12 +12,15 @@
 
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.XR;
 
 public class vp_FPInput : vp_Component
 {
 
-	// mouse look
-	public Vector2 MouseLookSensitivity = new Vector2(5.0f, 5.0f);
+    
+
+    // mouse look
+    public Vector2 MouseLookSensitivity = new Vector2(5.0f, 5.0f);
 	public bool MouseLookMutePitch = false;             // use this to make the 'InputSmoothLook' and 'InputRawLook' events always return zero pitch / yaw , regardless of sensitivity
 	public bool MouseLookMuteYaw = false;				// -		"	-
 	public int MouseLookSmoothSteps = 10;				// allowed range: 1-20
@@ -30,9 +33,11 @@ public class vp_FPInput : vp_Component
 	protected List<Vector2> m_MouseLookSmoothBuffer = new List<Vector2>();
 	protected int m_LastMouseLookFrame = -1;
 	protected Vector2 m_CurrentMouseLook = Vector2.zero;
+    public GameObject leftHand;
+    public GameObject rightHand;
 
-	// mouse cursor
-	public Rect[] MouseCursorZones = null;			// screen regions where mouse arrow remains visible when clicking. may be set up in the Inspector
+    // mouse cursor
+    public Rect[] MouseCursorZones = null;			// screen regions where mouse arrow remains visible when clicking. may be set up in the Inspector
 	// NOTE: these do not currently get saved to presets (!)
 	public bool MouseCursorForced = false;			// when true, the mouse arrow is enabled all over the screen and firing is disabled
 	public bool MouseCursorBlocksMouseLook = true;	// if true, mouselook will be disabled while the mouse arrow is visible
@@ -50,16 +55,21 @@ public class vp_FPInput : vp_Component
 		set { m_AllowGameplayInput = value; }
 	}
 
+    private Camera Playercamera;
+
 	protected vp_FPPlayerEventHandler m_FPPlayer = null;
 	public vp_FPPlayerEventHandler FPPlayer
-	{
-		get
-		{
-			if (m_FPPlayer == null)
-				m_FPPlayer = transform.root.GetComponentInChildren<vp_FPPlayerEventHandler>();
-			return m_FPPlayer;
-		}
-	}
+    {
+        get
+        {
+            if (m_FPPlayer == null)
+                m_FPPlayer = transform.root.GetComponentInChildren<vp_FPPlayerEventHandler>();
+            return m_FPPlayer;
+        }
+    }
+
+    //try to get height
+    private float height;
 
 
 	/// <summary>
@@ -67,8 +77,21 @@ public class vp_FPInput : vp_Component
 	/// </summary>
 	protected override void OnEnable()
 	{
+        rightHand = GameObject.FindGameObjectWithTag("RightHand");
+        leftHand = GameObject.FindGameObjectWithTag("LeftHand");
+        
+        if (XRDevice.isPresent)
+        {
+            leftHand.SetActive(true);
+            rightHand.SetActive(true);
+        }
+        else
+        {
+            leftHand.SetActive(false);
+            rightHand.SetActive(false);
+        }
 
-		if (FPPlayer != null)
+        if (FPPlayer != null)
 			FPPlayer.Register(this);
 
 	}
@@ -91,6 +114,12 @@ public class vp_FPInput : vp_Component
 	/// </summary>
 	protected override void Update()
 	{
+        Playercamera = FindObjectOfType<Camera>().GetComponent<Camera>();
+
+        if(Playercamera.transform.position.y > height)
+        {
+            height = Playercamera.transform.position.y;
+        }
 		
 		// manage input for GUI
 		UpdateCursorLock();
@@ -165,8 +194,7 @@ public class vp_FPInput : vp_Component
 	protected virtual void InputRun()
 	{
 
-		if (vp_Input.GetButton("Run")
-			  || vp_Input.GetAxisRaw("LeftTrigger") > 0.5f		// sprint using the left gamepad trigger
+		if (vp_Input.GetButton("Run")		// sprint using the left gamepad trigger
 			)
 			FPPlayer.Run.TryStart();
 		else
@@ -209,15 +237,33 @@ public class vp_FPInput : vp_Component
 	protected virtual void InputCrouch()
 	{
 
-		// IMPORTANT: using the 'Crouch' activity for crouching
-		// ensures that CharacterController (collision) height is only
-		// updated when needed. this is important because changing its
-		// height every frame will make trigger detection break!
+        // IMPORTANT: using the 'Crouch' activity for crouching
+        // ensures that CharacterController (collision) height is only
+        // updated when needed. this is important because changing its
+        // height every frame will make trigger detection break!
+        if(XRDevice.isPresent)
+        {
+            if (Playercamera.transform.position.y < height / 2)
+            {
+                FPPlayer.Crouch.TryStart();
+                print("crouching?");
+            }
 
-		if (vp_Input.GetButton("Crouch"))
-			FPPlayer.Crouch.TryStart();
-		else
-			FPPlayer.Crouch.TryStop();
+            else
+                FPPlayer.Crouch.TryStop(); print("not crouching?");
+        }
+        else
+        {
+            if (vp_Input.GetButton("Crouch"))
+            {
+                FPPlayer.Crouch.TryStart();
+                print("crouching?");
+            }
+
+            else
+                FPPlayer.Crouch.TryStop(); print("not crouching?");
+        }
+        
 
 		// TIP: to find out what determines if 'Crouch.TryStop'
 		// succeeds and where it is hooked up, search the project
@@ -265,8 +311,7 @@ public class vp_FPInput : vp_Component
 		if (!vp_Utility.LockCursor)
 			return;
 
-		if (vp_Input.GetButton("Attack")
-			  || vp_Input.GetAxisRaw("RightTrigger") > 0.5f		// fire using the right gamepad trigger
+		if (vp_Input.GetButton("Attack")	// fire using the right gamepad trigger
 			)
 			FPPlayer.Attack.TryStart();
 		else
