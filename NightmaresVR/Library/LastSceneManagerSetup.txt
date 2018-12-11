@@ -1,4 +1,8 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Scenes/study.unity
+=======
+- path: Assets/Scenes/Attic.unity
+>>>>>>> 6a5b594b767db5efcffb93c4368cd8e0bd431275
   isLoaded: 1
   isActive: 1
