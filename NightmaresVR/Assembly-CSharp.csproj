@@ -55,6 +55,9 @@
   <ItemGroup>
      <Compile Include="Assets\GameManager.cs" />
      <Compile Include="Assets\HandGrabbing.cs" />
+     <Compile Include="Assets\LightDetection.cs" />
+     <Compile Include="Assets\mentalHealth.cs" />
+     <Compile Include="Assets\mentalHealth1.cs" />
      <Compile Include="Assets\PlayerMovement.cs" />
      <Compile Include="Assets\Prefabs\Scripts\Core\Attributes\vp_FloatFieldAttribute.cs" />
      <Compile Include="Assets\Prefabs\Scripts\Core\Attributes\vp_HelpBoxAttribute.cs" />
@@ -206,6 +209,15 @@
      <Compile Include="Assets\Prefabs\Scripts\GUI\vp_SimpleHUD.cs" />
      <Compile Include="Assets\screw.cs" />
      <Compile Include="Assets\Screwdrivers.cs" />
+     <Compile Include="Assets\ShadowDetect\Scripts\Cameras\DragMouseOrbit.cs" />
+     <Compile Include="Assets\ShadowDetect\Scripts\DebugTool\FPSCounter.cs" />
+     <Compile Include="Assets\ShadowDetect\Scripts\DebugTool\OnShadowState.cs" />
+     <Compile Include="Assets\ShadowDetect\Scripts\GUIView.cs" />
+     <Compile Include="Assets\ShadowDetect\Scripts\ShadowDetect\BasicMouvement.cs" />
+     <Compile Include="Assets\ShadowDetect\Scripts\ShadowDetect\CustomFixedUpdate.cs" />
+     <Compile Include="Assets\ShadowDetect\Scripts\ShadowDetect\GrowScale.cs" />
+     <Compile Include="Assets\ShadowDetect\Scripts\ShadowDetect\MaterialManager.cs" />
+     <Compile Include="Assets\ShadowDetect\Scripts\ShadowDetect\ShadowDetect.cs" />
      <None Include="Assets\Prefabs\Scripts\Presets\Standard\Shooter\ShooterPistolOutOfControl.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\WeaponsHD\Pistol01\ShooterPistol01OutOfControl.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Standard\Camera\CameraClimb.txt" />
@@ -283,7 +295,6 @@
      <None Include="Assets\Prefabs\Scripts\Presets\Standard\Shooter\ShooterMachinegun.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Standard\Shooter\ShooterPistolZoom.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\OldSchoolCamera.txt" />
-     <None Include="Assets\Workplace Tools\README.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\MeleeWeaponPullUpRight.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Standard\Controller\ControllerZoom.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Standard\Weapon\WeaponPistol.txt" />
@@ -405,6 +416,7 @@
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\AstronautController.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\TurretShooter.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\ImmobileInput.txt" />
+     <None Include="Assets\ShadowDetect\Documentation\README.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\SniperShooter.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\CowboyWeaponCrouch.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\FreezeCamera.txt" />

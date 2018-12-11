@@ -87,6 +87,9 @@
      <Compile Include="Assets\Prefabs\Scripts\Gameplay\Editor\vp_RemotePlayerWizard.cs" />
      <Compile Include="Assets\Prefabs\Scripts\Gameplay\Editor\vp_SpawnPointEditor.cs" />
      <Compile Include="Assets\Prefabs\Scripts\Gameplay\Editor\vp_SurfaceIdentifierEditor.cs" />
+     <Compile Include="Assets\ShadowDetect\Editor\EditorTools.cs" />
+     <Compile Include="Assets\ShadowDetect\Editor\GloomyGlowSkin.cs" />
+     <Compile Include="Assets\ShadowDetect\Editor\ShadowDetectEditor.cs" />
  <Reference Include="UnityEditor.StandardEvents">
  <HintPath>D:/Unity2D/FinalProj/Nightmares/NightmaresVR/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
  </Reference>
