@@ -77,18 +77,18 @@ public class vp_FPInput : vp_Component
 	/// </summary>
 	protected override void OnEnable()
 	{
-        rightHand = GameObject.FindGameObjectWithTag("RightHand");
-        leftHand = GameObject.FindGameObjectWithTag("LeftHand");
+        //rightHand = GameObject.FindGameObjectWithTag("RightHand");
+       // leftHand = GameObject.FindGameObjectWithTag("LeftHand");
         
         if (XRDevice.isPresent)
         {
-            leftHand.SetActive(true);
-            rightHand.SetActive(true);
+           // leftHand.SetActive(true);
+           // rightHand.SetActive(true);
         }
         else
         {
-            leftHand.SetActive(false);
-            rightHand.SetActive(false);
+            //leftHand.SetActive(false);
+           // rightHand.SetActive(false);
         }
 
         if (FPPlayer != null)

@@ -53,12 +53,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\GameManager.cs" />
-     <Compile Include="Assets\HandGrabbing.cs" />
-     <Compile Include="Assets\LightDetection.cs" />
-     <Compile Include="Assets\mentalHealth.cs" />
-     <Compile Include="Assets\mentalHealth1.cs" />
-     <Compile Include="Assets\PlayerMovement.cs" />
+     <Compile Include="Assets\Prefabs\Props\3DTOYS\rotatecamera.cs" />
      <Compile Include="Assets\Prefabs\Scripts\Core\Attributes\vp_FloatFieldAttribute.cs" />
      <Compile Include="Assets\Prefabs\Scripts\Core\Attributes\vp_HelpBoxAttribute.cs" />
      <Compile Include="Assets\Prefabs\Scripts\Core\Attributes\vp_ItemAmountAttribute.cs" />
@@ -207,8 +202,22 @@
      <Compile Include="Assets\Prefabs\Scripts\GUI\vp_PainHUD.cs" />
      <Compile Include="Assets\Prefabs\Scripts\GUI\vp_SimpleCrosshair.cs" />
      <Compile Include="Assets\Prefabs\Scripts\GUI\vp_SimpleHUD.cs" />
-     <Compile Include="Assets\screw.cs" />
-     <Compile Include="Assets\Screwdrivers.cs" />
+     <Compile Include="Assets\ProCore\ProBuilder\API Examples\Icosphere FFT\Scripts\CameraControls.cs" />
+     <Compile Include="Assets\ProCore\ProBuilder\API Examples\Icosphere FFT\Scripts\IcoBumpin.cs" />
+     <Compile Include="Assets\ProCore\ProBuilder\API Examples\Misc\HueCube.cs" />
+     <Compile Include="Assets\ProCore\ProBuilder\API Examples\Procedural Mesh\ExtrudeRandomEdges.cs" />
+     <Compile Include="Assets\ProCore\ProBuilder\API Examples\Runtime Editing\RuntimeEdit.cs" />
+     <Compile Include="Assets\ProCore\ProBuilder\API Examples\Vertex Colors\HighlightNearestFace.cs" />
+     <Compile Include="Assets\Scripts\GameManager.cs" />
+     <Compile Include="Assets\Scripts\HandGrabbing.cs" />
+     <Compile Include="Assets\Scripts\LightDetection.cs" />
+     <Compile Include="Assets\Scripts\Locks.cs" />
+     <Compile Include="Assets\Scripts\mentalHealth.cs" />
+     <Compile Include="Assets\Scripts\mentalHealth1.cs" />
+     <Compile Include="Assets\Scripts\NightlightController.cs" />
+     <Compile Include="Assets\Scripts\screw.cs" />
+     <Compile Include="Assets\Scripts\Screwdrivers.cs" />
+     <Compile Include="Assets\Scripts\ventScript.cs" />
      <Compile Include="Assets\ShadowDetect\Scripts\Cameras\DragMouseOrbit.cs" />
      <Compile Include="Assets\ShadowDetect\Scripts\DebugTool\FPSCounter.cs" />
      <Compile Include="Assets\ShadowDetect\Scripts\DebugTool\OnShadowState.cs" />
@@ -218,11 +227,23 @@
      <Compile Include="Assets\ShadowDetect\Scripts\ShadowDetect\GrowScale.cs" />
      <Compile Include="Assets\ShadowDetect\Scripts\ShadowDetect\MaterialManager.cs" />
      <Compile Include="Assets\ShadowDetect\Scripts\ShadowDetect\ShadowDetect.cs" />
+     <Compile Include="Assets\Soja Exiles\Bar &amp; Liquor Cabinets\Scripts &amp; Animation\TableFlipL.cs" />
+     <Compile Include="Assets\Soja Exiles\Bar &amp; Liquor Cabinets\Scripts &amp; Animation\TableFlipR.cs" />
+     <Compile Include="Assets\Soja Exiles\SE Basic Assets\Scripts and Animations\Doors\opencloseDoor.cs" />
+     <Compile Include="Assets\Soja Exiles\SE Basic Assets\Scripts and Animations\Doors\opencloseDoor1.cs" />
+     <Compile Include="Assets\Soja Exiles\SE Basic Assets\Scripts and Animations\Drawer\X Axis\Drawer_Pull_X.cs" />
+     <Compile Include="Assets\Soja Exiles\SE Basic Assets\Scripts and Animations\Drawer\Z Axis\Drawer_Pull_Z.cs" />
+     <Compile Include="Assets\Soja Exiles\SE Basic Assets\Scripts and Animations\FPS By Acacia Developer\PlayerLook.cs" />
+     <Compile Include="Assets\Soja Exiles\SE Basic Assets\Scripts and Animations\FPS By Acacia Developer\PlayerMove.cs" />
+     <Compile Include="Assets\Soja Exiles\SE Basic Assets\Scripts and Animations\Windows\opencloseWindow1.cs" />
+     <Compile Include="Assets\vent.cs" />
      <None Include="Assets\Prefabs\Scripts\Presets\Standard\Shooter\ShooterPistolOutOfControl.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\WeaponsHD\Pistol01\ShooterPistol01OutOfControl.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Standard\Camera\CameraClimb.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Standard\Shooter\ShooterMachinegunZoom.txt" />
+     <None Include="Assets\ProCore\ProBuilder\Shader\pb_TransparentOverlay.shader" />
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\SystemOFFShooter.txt" />
+     <None Include="Assets\ProCore\ProBuilder\API Examples\Icosphere FFT\README.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Standard\Controller\ControllerDead.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Standard\Controller\ControllerCrouch.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Standard\Weapon\WeaponRevolverCrouch.txt" />
@@ -236,6 +257,9 @@
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\OldSchoolInput.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\ModernInput.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\PerspOldWeapon.txt" />
+     <None Include="Assets\ProCore\ProBuilder\Shader\pb_SelectionPicker.shader" />
+     <None Include="Assets\ProCore\ProBuilder\About\changelog.txt" />
+     <None Include="Assets\ProCore\ProBuilder\Shader\DiffuseVertexColor.shader" />
      <None Include="Assets\Prefabs\Scripts\Presets\WeaponsHD\Grenade01\WeaponGrenade01Rewield.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\MafiaCamera.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Standard\Controller\ControllerFreeze.txt" />
@@ -255,11 +279,13 @@
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\MafiaShooter.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Standard\Weapon\WeaponPistolReload2.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Standard\Camera\CameraReload.txt" />
+     <None Include="Assets\Soja Exiles\SE Basic Assets\Scripts and Animations\FPS By Acacia Developer\Scripts by Acacia Developer.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\SmackController.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Standard\Camera\CameraFreeze.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\MeleeWeaponPullUpLeft.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\SystemOFFInput.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\WallFacingWeapon.txt" />
+     <None Include="Assets\ProCore\ProBuilder\Shader\pb_FaceHighlight.shader" />
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\Persp1999Weapon.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\FreezeController.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\MeleeWeaponSwingDown.txt" />
@@ -273,6 +299,7 @@
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\Persp1999Camera.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\WeaponsHD\AssaultRifle01\ShooterAssaultRifle01Zoom.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\ModernController.txt" />
+     <None Include="Assets\Prefabs\Props\3DTOYS\readme.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Standard\Shooter\ShooterRevolverZoom.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Standard\Weapon\WeaponRevolverReload.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\MouseSmoothingCamera.txt" />
@@ -289,6 +316,7 @@
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\PerspModernInput.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\MeleeAttackToDown.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Standard\FootFX\FootFXFixedTimeZoom.txt" />
+     <None Include="Assets\ProCore\ProBuilder\Shader\pb_UnlitSolidColor.shader" />
      <None Include="Assets\Prefabs\Scripts\Presets\WeaponsHD\Pistol01\WeaponPistol01Run.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\ArtilleryInput.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\DefaultWeapon.txt" />
@@ -297,6 +325,7 @@
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\OldSchoolCamera.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\MeleeWeaponPullUpRight.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Standard\Controller\ControllerZoom.txt" />
+     <None Include="Assets\ProCore\ProBuilder\Shader\pb_ReferenceUnlit.shader" />
      <None Include="Assets\Prefabs\Scripts\Presets\Standard\Weapon\WeaponPistol.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\MeleeWeaponPullUp.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\PerspOldInput.txt" />
@@ -309,9 +338,11 @@
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\ModernShooter.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Standard\Weapon\WeaponRevolver.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\ImmobileCamera.txt" />
+     <None Include="Assets\ProCore\ProBuilder\Shader\DiffuseTextureBlend.shader" />
      <None Include="Assets\Prefabs\Scripts\Presets\WeaponsHD\Shotgun01\ShooterShotgun01Default.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\MaceCamera.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\ImmobileController.txt" />
+     <None Include="Assets\ProCore\ProBuilder\Shader\pb_StandardVertexColor.shader" />
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\MeleeWeaponSwingLeft.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\MechController.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\DrunkController.txt" />
@@ -320,8 +351,10 @@
      <None Include="Assets\Prefabs\Scripts\Presets\Standard\Weapon\WeaponMachinegunReload.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\ArtilleryCamera.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\WeaponsHD\Shotgun01\WeaponShotgun01Crouch.txt" />
+     <None Include="Assets\ProCore\ProBuilder\Shader\pb_VertexPicker.shader" />
      <None Include="Assets\Prefabs\Scripts\Presets\Standard\Weapon\WeaponPistolCrouch.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\MechWeapon.txt" />
+     <None Include="Assets\ProCore\ProBuilder\Shader\pb_HideVertices.shader" />
      <None Include="Assets\Prefabs\Scripts\Presets\WeaponsHD\Knife01\KnifeAttackToDownRight.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\WeaponsHD\Grenade01\WeaponGrenade01Zoom.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\ModernCameraCrouch.txt" />
@@ -329,17 +362,22 @@
      <None Include="Assets\Prefabs\Scripts\Presets\Standard\Camera\CameraDead.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\MouseSmoothingInput.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\WeaponsHD\Pistol01\ShooterPistol01Zoom.txt" />
+     <None Include="Assets\Prefabs\Props\Attic Props\Key\readME keys.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\WeaponsHD\Pistol01\WeaponPistol01Slide.txt" />
+     <None Include="Assets\ProCore\ProBuilder\About\ThirdPartyLicenses.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\CowboyShooter.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\MouseLowSensWeapon.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\MeleeWeaponSwingDownLeft.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\StompingInput.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\MafiaWeaponZoom.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\SystemOFFController.txt" />
+     <None Include="Assets\ProCore\ProBuilder\Shader\pb_UnlitVertexColor.shader" />
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\MeleeWeaponPullDown.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\CrouchInput.txt" />
+     <None Include="Assets\ProCore\ProBuilder\Shader\pb_FacePicker.shader" />
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\OldSchoolWeapon.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\MouseLowSensInput.txt" />
+     <None Include="Assets\Prefabs\Props\Attic Props\TV\readme.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\WeaponsHD\AssaultRifle01\ShooterAssaultRifle01Default.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\ControllerMegaSpeed.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\WeaponsHD\Shotgun01\WeaponShotgun01Zoom.txt" />
@@ -356,6 +394,7 @@
      <None Include="Assets\Prefabs\Scripts\Presets\Standard\Weapon\WeaponPistolReload.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Standard\Shooter\ShooterRevolver.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\WeaponsHD\Pistol01\WeaponPistol01OutOfControl.txt" />
+     <None Include="Assets\ProCore\ProBuilder\About\Font\SIL Open Font License.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\MeleeWeaponSwingDownRight.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\ModernWeapon.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\PivotChestWeapon.txt" />
@@ -370,9 +409,11 @@
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\SystemOFFCamera.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\MafiaInput.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\FreezeInput.txt" />
+     <None Include="Assets\ProCore\ProBuilder\About\pc_AboutEntry_ProBuilder.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\PerspOldCamera.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\WeaponsHD\Shotgun01\WeaponShotgun01Run.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Standard\Weapon\WeaponGenericSlide.txt" />
+     <None Include="Assets\ProCore\ProBuilder\Shader\pb_VertexShader.shader" />
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\MafiaWeapon.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\DrunkInput.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\WeaponsHD\AssaultRifle01\WeaponAssaultRifle01Crouch.txt" />
@@ -380,6 +421,7 @@
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\MechShooter.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\MechInput.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\MeleeAttackToLeft.txt" />
+     <None Include="Assets\ProCore\ProBuilder\Shader\pb_NormalPreview.shader" />
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\TurretCamera.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\CowboyWeapon.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\PivotElbowWeapon.txt" />
@@ -397,6 +439,8 @@
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\ModernControllerZoom.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\MeleeAttackToUp.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\ModernShooterZoom.txt" />
+     <None Include="Assets\ProCore\ProBuilder\Shader\pb_ScrollHighlight.shader" />
+     <None Include="Assets\ProCore\ProBuilder\readme.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Standard\Camera\CameraSlide.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\MechCamera.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\CowboyShooterZoom.txt" />
@@ -419,11 +463,13 @@
      <None Include="Assets\ShadowDetect\Documentation\README.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\SniperShooter.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\CowboyWeaponCrouch.txt" />
+     <None Include="Assets\ProCore\ProBuilder\Shader\pb_SmoothingPreview.shader" />
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\FreezeCamera.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Standard\Weapon\WeaponMachinegunOutOfControl.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\MouseSmoothingWeapon.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\PivotWristWeapon.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\SimpleAIShooter.txt" />
+     <None Include="Assets\Soja Exiles\Bar &amp; Liquor Cabinets\Message For You Please Read Me.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\AstronautWeapon.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Standard\Weapon\WeaponRevolverOutOfControl.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\MeleeAttackToDownRight.txt" />
@@ -637,6 +683,21 @@
  </Reference>
  <Reference Include="UnityEngine.SpatialTracking">
  <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
+ </Reference>
+ <Reference Include="ProBuilderCore-Unity5">
+ <HintPath>D:/Unity2D/FinalProj/Nightmares/NightmaresVR/Assets/ProCore/ProBuilder/Classes/ProBuilderCore-Unity5.dll</HintPath>
+ </Reference>
+ <Reference Include="ProBuilderMeshOps-Unity5">
+ <HintPath>D:/Unity2D/FinalProj/Nightmares/NightmaresVR/Assets/ProCore/ProBuilder/Classes/ProBuilderMeshOps-Unity5.dll</HintPath>
+ </Reference>
+ <Reference Include="KdTreeLib">
+ <HintPath>D:/Unity2D/FinalProj/Nightmares/NightmaresVR/Assets/ProCore/ProBuilder/Classes/ClassesLib/KdTreeLib.dll</HintPath>
+ </Reference>
+ <Reference Include="pb_Stl">
+ <HintPath>D:/Unity2D/FinalProj/Nightmares/NightmaresVR/Assets/ProCore/ProBuilder/Classes/ClassesLib/pb_Stl.dll</HintPath>
+ </Reference>
+ <Reference Include="Poly2Tri">
+ <HintPath>D:/Unity2D/FinalProj/Nightmares/NightmaresVR/Assets/ProCore/ProBuilder/Classes/ClassesLib/Poly2Tri.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Analytics">
  <HintPath>C:/Users/sleep/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.16/UnityEngine.Analytics.dll</HintPath>
