@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour {
     public Vector3 leftHandVelocity;
     public Vector3 rightHandVelocity;
     public int BRScrews;
+    public int MentalHealth = 100;
 
     private void Awake()
     {
