@@ -245,7 +245,7 @@ public class vp_FPInput : vp_Component
             if (Playercamera.transform.position.y < height / 2)
             {
                 FPPlayer.Crouch.TryStart();
-                print("crouching?");
+                //print("crouching?");
             }
 
             else
@@ -256,11 +256,11 @@ public class vp_FPInput : vp_Component
             if (vp_Input.GetButton("Crouch"))
             {
                 FPPlayer.Crouch.TryStart();
-                print("crouching?");
+                //print("crouching?");
             }
 
             else
-                FPPlayer.Crouch.TryStop(); print("not crouching?");
+                FPPlayer.Crouch.TryStop(); //print("not crouching?");
         }
         
 
