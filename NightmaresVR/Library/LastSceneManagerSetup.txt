@@ -1,4 +1,12 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Scenes/Scale Model.unity
+=======
+<<<<<<< HEAD
+- path: Assets/Scenes/bathroom.unity
+=======
+- path: Assets/Scenes/Nightlight.unity
+>>>>>>> d90b74015a2495ecd40e8a8403a430e01867c5e7
+>>>>>>> f3681dfd8d17cc5eae8ecc731a9f98c53a5eae5e
   isLoaded: 1
   isActive: 1
