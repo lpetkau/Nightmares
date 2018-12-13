@@ -87,8 +87,7 @@ public class vp_FPInput : vp_Component
         }
         else
         {
-            leftHand.SetActive(false);
-            rightHand.SetActive(false);
+            
         }
 
         if (FPPlayer != null)
