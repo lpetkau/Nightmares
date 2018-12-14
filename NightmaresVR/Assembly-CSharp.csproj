@@ -53,6 +53,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\MagicMirror\Demo\DemoScript.cs" />
+     <Compile Include="Assets\MagicMirror\Prefab\MirrorCameraScript.cs" />
+     <Compile Include="Assets\MagicMirror\Prefab\MirrorReflectionScript.cs" />
+     <Compile Include="Assets\MagicMirror\Prefab\MirrorScript.cs" />
      <Compile Include="Assets\Prefabs\Props\3DTOYS\rotatecamera.cs" />
      <Compile Include="Assets\Prefabs\Scripts\Core\Attributes\vp_FloatFieldAttribute.cs" />
      <Compile Include="Assets\Prefabs\Scripts\Core\Attributes\vp_HelpBoxAttribute.cs" />
@@ -244,6 +248,7 @@
      <Compile Include="Assets\Soja Exiles\SE Basic Assets\Scripts and Animations\FPS By Acacia Developer\PlayerMove.cs" />
      <Compile Include="Assets\Soja Exiles\SE Basic Assets\Scripts and Animations\Windows\opencloseWindow1.cs" />
      <None Include="Assets\Prefabs\Scripts\Presets\Standard\Shooter\ShooterPistolOutOfControl.txt" />
+     <None Include="Assets\MagicMirror\Prefab\MirrorShaderOld.shader" />
      <None Include="Assets\Prefabs\Scripts\Presets\WeaponsHD\Pistol01\ShooterPistol01OutOfControl.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Standard\Camera\CameraClimb.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Standard\Shooter\ShooterMachinegunZoom.txt" />
@@ -276,6 +281,7 @@
      <None Include="Assets\Prefabs\Scripts\Gameplay\Player\Local\OldInventory\_OLD_INVENTORY_README_.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\MouseRawUnityCamera.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\CowboyCamera.txt" />
+     <None Include="Assets\MagicMirror\Prefab\MirrorShaderBumpMap.shader" />
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\SystemOFFWeapon.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\MeleeWeaponPullLeft.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\ControllerCrouch.txt" />
@@ -366,6 +372,7 @@
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\ModernCameraCrouch.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\SniperInput.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Standard\Camera\CameraDead.txt" />
+     <None Include="Assets\MagicMirror\Prefab\Readme.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\MouseSmoothingInput.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\WeaponsHD\Pistol01\ShooterPistol01Zoom.txt" />
      <None Include="Assets\Prefabs\Props\Attic Props\Key\readME keys.txt" />
@@ -439,6 +446,7 @@
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\ModernWeaponZoom.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\MafiaShooterZoom.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\PerspModernWeapon.txt" />
+     <None Include="Assets\MagicMirror\Prefab\MirrorShader.shader" />
      <None Include="Assets\Prefabs\Scripts\Presets\Standard\Weapon\WeaponPistolRun.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\PerspModernCamera.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\WeaponsHD\Pistol01\ShooterPistol01Default.txt" />
