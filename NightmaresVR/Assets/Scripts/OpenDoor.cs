@@ -5,8 +5,8 @@ using UnityEngine;
 public class OpenDoor : MonoBehaviour {
 
     private bool CanInteract = true;
-    private bool WantToOpen;
-
+    private bool IsOpen = true;
+    
     void OnTriggerStay(Collider other)
     {
         if (other.gameObject.tag == "Player")
@@ -19,19 +19,20 @@ public class OpenDoor : MonoBehaviour {
                 CanInteract = false;
                 Invoke("ResetDoorInteract", 1f);
 
-                GameObject Door = GameObject.Find("Door");
-                Door DoorScript = Door.GetComponent<Door>();
-                WantToOpen = DoorScript.DesiredOpen; // get variable from door
+                // get its current state
+                IsOpen = this.gameObject.GetComponentInParent<Door>().CheckState();
 
-                // Swap between, openning and closing
-                if (WantToOpen == true)
-                { WantToOpen = false; }
-                else
-                { WantToOpen = true; }
-                DoorScript.DesiredOpen = WantToOpen; // update that variable
-
+                if (IsOpen == false)
+                {
+                    //Debug.Log("Open");
+                    this.gameObject.GetComponentInParent<Door>().SetDesiredOpen();
+                }
+                else if (IsOpen == true)
+                {
+                    //Debug.Log("Close");
+                    this.gameObject.GetComponentInParent<Door>().SetDesiredClosed();
+                }
             }
-
         }
     }
 
