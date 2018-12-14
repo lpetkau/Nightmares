@@ -48,4 +48,27 @@ public class Door : MonoBehaviour {
         } // end CLOSE DOOR
 
     }
+
+    public void SetDesiredOpen()
+    {
+        DesiredOpen = true;
+    }
+
+    public void SetDesiredClosed()
+    {
+        DesiredOpen = false;
+    }
+
+    public bool CheckState()
+    {
+        if(IsOpen)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
 }
