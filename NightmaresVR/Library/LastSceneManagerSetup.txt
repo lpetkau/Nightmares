@@ -1,4 +1,8 @@
 sceneSetups:
-- path: Assets/Scenes/bathroom.unity
+<<<<<<< HEAD
+- path: Assets/Scenes/study.unity
+=======
+- path: Assets/Scenes/Scale Model.unity
+>>>>>>> a9a2bf9f18fdab9135a6ab1379e087e4238bef10
   isLoaded: 1
   isActive: 1
