@@ -61,9 +61,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\LightDetection.cs" />
-    <Compile Include="Assets\mentalHealth.cs" />
-    <Compile Include="Assets\mentalHealth1.cs" />
     <Compile Include="Assets\Prefabs\Props\3DTOYS\rotatecamera.cs" />
     <Compile Include="Assets\Prefabs\Scripts\Core\Attributes\vp_FloatFieldAttribute.cs" />
     <Compile Include="Assets\Prefabs\Scripts\Core\Attributes\vp_HelpBoxAttribute.cs" />
@@ -220,14 +217,22 @@
     <Compile Include="Assets\ProCore\ProBuilder\API Examples\Runtime Editing\RuntimeEdit.cs" />
     <Compile Include="Assets\ProCore\ProBuilder\API Examples\Vertex Colors\HighlightNearestFace.cs" />
     <Compile Include="Assets\Scripts\BodyGlow.cs" />
+    <Compile Include="Assets\Scripts\Door.cs" />
     <Compile Include="Assets\Scripts\EnemyController.cs" />
     <Compile Include="Assets\Scripts\EyeLight.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\HandGrabbing.cs" />
+    <Compile Include="Assets\Scripts\LightDetection.cs" />
+    <Compile Include="Assets\Scripts\Locks.cs" />
+    <Compile Include="Assets\Scripts\mentalHealth.cs" />
+    <Compile Include="Assets\Scripts\mentalHealth1.cs" />
     <Compile Include="Assets\Scripts\NightlightController.cs" />
+    <Compile Include="Assets\Scripts\OpenDoor.cs" />
     <Compile Include="Assets\Scripts\PlayerManager.cs" />
     <Compile Include="Assets\Scripts\screw.cs" />
     <Compile Include="Assets\Scripts\Screwdrivers.cs" />
+    <Compile Include="Assets\Scripts\vent.cs" />
+    <Compile Include="Assets\Scripts\ventScript.cs" />
     <Compile Include="Assets\ShadowDetect\Scripts\Cameras\DragMouseOrbit.cs" />
     <Compile Include="Assets\ShadowDetect\Scripts\DebugTool\FPSCounter.cs" />
     <Compile Include="Assets\ShadowDetect\Scripts\DebugTool\OnShadowState.cs" />
@@ -390,7 +395,6 @@
     <None Include="Assets\Prefabs\Scripts\Presets\WeaponsHD\AssaultRifle01\ShooterAssaultRifle01Default.txt" />
     <None Include="Assets\Prefabs\Scripts\Presets\Demo\ControllerMegaSpeed.txt" />
     <None Include="Assets\Prefabs\Scripts\Presets\WeaponsHD\Shotgun01\WeaponShotgun01Zoom.txt" />
-    <None Include="Assets\Mega Fantasy Props Pack\README.txt" />
     <None Include="Assets\Prefabs\Scripts\Presets\Demo\MeleeWeaponSwingUp.txt" />
     <None Include="Assets\Prefabs\Scripts\Presets\Demo\ImmobileWeapon.txt" />
     <None Include="Assets\Prefabs\Scripts\Presets\Standard\Weapon\WeaponMachinegunRun.txt" />
