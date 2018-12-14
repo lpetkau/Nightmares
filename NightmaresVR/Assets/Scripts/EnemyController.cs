@@ -9,11 +9,16 @@ public class EnemyController : MonoBehaviour {
 
 	public float lookRadius = 10f;	// Detection range for player
 
-    private float randMax = 40f;
+    private float randMax = 10f;
 
     private bool atTarget;
 
+    private bool navFound;
+
     private Vector3 wanderTarget;
+    private float wanderDistance;
+    private float wanderTime = 0f;
+    public float wanderTimeLimit = 5;
 
 	Transform target;	// Reference to the player
 	NavMeshAgent agent; // Reference to the NavMeshAgent
@@ -31,6 +36,9 @@ public class EnemyController : MonoBehaviour {
 	void Update () {
 		// Distance to the target
 		float distance = Vector3.Distance(target.position, transform.position);
+        wanderDistance = Vector3.Distance(wanderTarget, transform.position);
+        //print(wanderTarget);
+        //print(wanderDistance);
 
 		// If inside the lookRadius
 		if (distance <= lookRadius)
@@ -48,8 +56,17 @@ public class EnemyController : MonoBehaviour {
         //Not inside lookRadius
         else
         {
-            print(agent.destination);
-            agent.SetDestination(RandomNavSphere(transform.position, randMax, 0));
+            wanderTime += Time.deltaTime;
+            if (wanderDistance <= agent.stoppingDistance || wanderTime >= wanderTimeLimit)
+            {
+                navFound = false;
+                wanderTarget = RandomNavSphere(transform.position, randMax, 1);
+                //print("Target Destination: " + agent.destination);
+                //Debug.Log("Wander Distance in if: " + wanderDistance);
+
+                agent.SetDestination(wanderTarget);
+            }
+            //Debug.Log("Wander Distance out if: " + wanderDistance);
         }
 	}
 
@@ -63,23 +80,32 @@ public class EnemyController : MonoBehaviour {
 
     
 
-    public static Vector3 RandomNavSphere(Vector3 origin, float distance, int layermask)
+    private Vector3 RandomNavSphere(Vector3 origin, float distance, int layermask)
     {
-        Vector3 randomDirection = UnityEngine.Random.insideUnitSphere * distance;
+        if (!navFound)
+        {
+            Vector3 randomDirection = Random.insideUnitSphere * distance;
+            Debug.Log("Before: " + randomDirection);
+            randomDirection += origin;
+            Debug.Log("After: " + randomDirection);
+            NavMeshHit navHit;
+            //print(randomDirection);
 
-        randomDirection += origin;
 
-        NavMeshHit navHit;
+            navFound = NavMesh.SamplePosition(randomDirection, out navHit, distance, layermask);
+            print(navFound);
 
-        NavMesh.SamplePosition(randomDirection, out navHit, distance, layermask);
-
-        return navHit.position;
+            print("NAVHITPOSTION" + navHit.position);
+            return navHit.position;
+        }
+        return transform.position;
+        
     }
 
     // Show the lookRadius in editor
     void OnDrawGizmosSelected ()
 	{
-		Gizmos.color = Color.yellow;
+		Gizmos.color = Color.red;
 		Gizmos.DrawWireSphere(transform.position, lookRadius);
         
 	}
