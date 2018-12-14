@@ -12,6 +12,7 @@ public class EnemyController : MonoBehaviour {
     private float randMax = 10f;
 
     private bool atTarget;
+    private float stoppingRef = 2f;
 
     private bool navFound;
 
@@ -39,6 +40,7 @@ public class EnemyController : MonoBehaviour {
         wanderDistance = Vector3.Distance(wanderTarget, transform.position);
         //print(wanderTarget);
         //print(wanderDistance);
+        stoppingRef = agent.stoppingDistance;
 
 		// If inside the lookRadius
 		if (distance <= lookRadius)
@@ -65,6 +67,7 @@ public class EnemyController : MonoBehaviour {
                 //Debug.Log("Wander Distance in if: " + wanderDistance);
 
                 agent.SetDestination(wanderTarget);
+                wanderTime = 0;
             }
             //Debug.Log("Wander Distance out if: " + wanderDistance);
         }
@@ -107,6 +110,10 @@ public class EnemyController : MonoBehaviour {
 	{
 		Gizmos.color = Color.red;
 		Gizmos.DrawWireSphere(transform.position, lookRadius);
-        
-	}
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(transform.position, stoppingRef);
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(agent.destination, 1);
+
+    }
 }
