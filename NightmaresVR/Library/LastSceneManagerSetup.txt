@@ -1,4 +1,8 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Scenes/Attic.unity
+=======
+- path: Assets/Scenes/SampleScene.unity
+>>>>>>> 1f2a4dab4cda1c4ef5ee9e46444376a7de276e81
   isLoaded: 1
   isActive: 1

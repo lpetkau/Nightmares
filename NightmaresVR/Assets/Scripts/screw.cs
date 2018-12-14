@@ -19,16 +19,21 @@ public class screw : MonoBehaviour {
     {
         Screw.GetComponent<Rigidbody>().useGravity = false;
          Screw.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition;
-      
+       
+
+
 
     }
     void Update()
     {
-
-        Debug.Log(GameManager.Instance.BRScrews);
+        if (Screwedonce == true)
+        {
+            Screw.transform.Rotate(Vector3.forward * 600 * Time.deltaTime);
+        }
 
         if (screwed == true)
         {
+            
             StartCoroutine(screwcountout());
 
         }
@@ -39,7 +44,8 @@ public class screw : MonoBehaviour {
     IEnumerator screwcountout()
     {
         screwed = false;
-        Screw.transform.Rotate(Vector3.forward * 60 * Time.deltaTime);
+        
+        
         yield return new WaitForSeconds(4);
         Screw.GetComponent<Rigidbody>().useGravity = true;
         Screw.GetComponent<Rigidbody>().constraints = ~RigidbodyConstraints.FreezePosition;
@@ -51,7 +57,7 @@ public class screw : MonoBehaviour {
     }
 
 
-    public void OnCollisionEnter(Collision collider)
+    public void OnTriggerEnter(Collider collider)
     {
         switch (collider.gameObject.tag)
         {
