@@ -145,6 +145,9 @@
     <Compile Include="Assets\ProCore\ProBuilder\Editor\pb_MissingScriptEditor.cs" />
     <Compile Include="Assets\ProCore\ProBuilder\Editor\pb_Preferences.cs" />
     <Compile Include="Assets\ProCore\ProBuilder\Editor\pb_ScenePostProcessor.cs" />
+    <Compile Include="Assets\ShadowDetect\Editor\EditorTools.cs" />
+    <Compile Include="Assets\ShadowDetect\Editor\GloomyGlowSkin.cs" />
+    <Compile Include="Assets\ShadowDetect\Editor\ShadowDetectEditor.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>D:/Users/lynke/Documents/Nightmares/NightmaresVR/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
