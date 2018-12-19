@@ -21,14 +21,19 @@ public class EnemyController : MonoBehaviour {
     private float wanderTime = 0f;
     public float wanderTimeLimit = 5;
 
+   
+
 	Transform target;	// Reference to the player
 	NavMeshAgent agent; // Reference to the NavMeshAgent
+
+    Animator animator;
 	
 
 	// Use this for initialization
 	void Start () {
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
 		agent = GetComponent<NavMeshAgent>();
+        animator = GetComponent<Animator>();
 
         wanderTarget = transform.position;
     }
@@ -45,8 +50,10 @@ public class EnemyController : MonoBehaviour {
 		// If inside the lookRadius
 		if (distance <= lookRadius)
 		{
-			// Move towards the target
-			agent.SetDestination(target.position);
+            animator.SetBool("seePlayer", true);
+            // Move towards the target
+            agent.SetDestination(target.position);
+            agent.speed = 5;
             FaceTarget();
 
             // If within attacking distance
@@ -58,6 +65,8 @@ public class EnemyController : MonoBehaviour {
         //Not inside lookRadius
         else
         {
+            animator.SetBool("seePlayer", false);
+            agent.speed = 1;
             wanderTime += Time.deltaTime;
             if (wanderDistance <= agent.stoppingDistance || wanderTime >= wanderTimeLimit)
             {
@@ -78,7 +87,7 @@ public class EnemyController : MonoBehaviour {
 	{
 		Vector3 direction = (target.position - transform.position).normalized;
 		Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
-		transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
+		transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 10f);
 	}
 
     
