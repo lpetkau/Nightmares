@@ -18,7 +18,7 @@ public class Locks : MonoBehaviour {
                 if (collider.gameObject.name == "Key1"  &&  DoorNumber == 1)
                 {
                     GameManager.Instance.Door1Locked = false;
-                    Debug.Log("Unlock");
+                     Debug.Log("GameManager.Instance.Door1Locked");
                 }
 
                 else if(collider.gameObject.name == "Key2" && DoorNumber == 1)
@@ -36,7 +36,7 @@ public class Locks : MonoBehaviour {
                 else if (collider.gameObject.name == "Key2" && DoorNumber == 2)
                 {
                     GameManager.Instance.Door2Locked = false;
-                    Debug.Log("Unlock");
+                   
                 }
 
                 break;

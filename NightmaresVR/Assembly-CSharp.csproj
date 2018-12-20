@@ -220,6 +220,7 @@
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\HandGrabbing.cs" />
      <Compile Include="Assets\Scripts\LightDetection.cs" />
+     <Compile Include="Assets\Scripts\lIGHTNING.cs" />
      <Compile Include="Assets\Scripts\Locks.cs" />
      <Compile Include="Assets\Scripts\mentalHealth.cs" />
      <Compile Include="Assets\Scripts\mentalHealth1.cs" />

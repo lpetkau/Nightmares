@@ -18,19 +18,27 @@ public class Door : MonoBehaviour {
     void Update()
     {
         // OPEN DOOR
-        if(!IsOpen && DesiredOpen)
+        // Is Door Locked
+        if (GameManager.Instance.Door1Locked == false)
         {
-            if (count < 90)
+            if (!IsOpen && DesiredOpen)
             {
-                count += 1;
-                rb.transform.Rotate(1, 0, 0);
-            }
-            else
-            {
-                IsOpen = true;
-                count = 0;
-            }
-        } // end OPEN DOOR
+                if (count < 90)
+                {
+                    count += 1;
+                    rb.transform.Rotate(1, 0, 0);
+                }
+                else
+                {
+                    IsOpen = true;
+                    count = 0;
+                }
+            } // end OPEN DOOR
+
+
+       
+
+
 
         // CLOSE DOOR
         if (IsOpen && !DesiredOpen)
@@ -46,29 +54,38 @@ public class Door : MonoBehaviour {
                 count = 0;
             }
         } // end CLOSE DOOR
-
+}//end Locked door LOCK
     }
 
     public void SetDesiredOpen()
     {
-        DesiredOpen = true;
+        if (GameManager.Instance.Door1Locked == false)
+        {
+            DesiredOpen = true;
+        }
     }
 
     public void SetDesiredClosed()
     {
-        DesiredOpen = false;
+        if (GameManager.Instance.Door1Locked == false)
+        {
+            DesiredOpen = false;
+        }
     }
 
     public bool CheckState()
     {
-        if(IsOpen)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+       
+            if (IsOpen)
+            {
+                return true;
+            }
+        
+            else
+            {
+                return false;
+            }
+        
     }
-
+ 
 }
