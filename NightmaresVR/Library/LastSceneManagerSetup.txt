@@ -1,4 +1,8 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Scenes/SampleScene.unity
+=======
+- path: Assets/Scenes/Nightlight.unity
+>>>>>>> 93c4cf0a2d303ea6a71c17acb95a15481d94b7e6
   isLoaded: 1
   isActive: 1
