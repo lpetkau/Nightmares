@@ -35,11 +35,6 @@ public class Door : MonoBehaviour {
                 }
             } // end OPEN DOOR
 
-
-       
-
-
-
         // CLOSE DOOR
         if (IsOpen && !DesiredOpen)
         {

@@ -26,7 +26,7 @@ public class OpenDoor : MonoBehaviour {
                 {
                     //Debug.Log("Open");
                     this.gameObject.GetComponentInParent<Door>().SetDesiredOpen();
-                    Physics.IgnoreCollision(this.GetComponent<BoxCollider>(), other.gameObject.GetComponent<BoxCollider>()); // player ignore door
+                    Physics.IgnoreCollision(this.GetComponent<BoxCollider>(), other.gameObject.GetComponent<CharacterController>()); // player ignore door
                 }
                 else if (IsOpen == true)
                 {
@@ -37,7 +37,7 @@ public class OpenDoor : MonoBehaviour {
             }
             else if (CanInteract)
             {
-                Physics.IgnoreCollision(this.GetComponent<BoxCollider>(), other.gameObject.GetComponent<BoxCollider>(), false); // player stop ignoring door
+                Physics.IgnoreCollision(this.GetComponent<BoxCollider>(), other.gameObject.GetComponent<CharacterController>(), false); // player stop ignoring door
             }
         }
     }
