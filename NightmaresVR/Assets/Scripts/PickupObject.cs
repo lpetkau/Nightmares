@@ -5,7 +5,6 @@ using UnityEngine;
 public class PickupObject : MonoBehaviour {
 
     private bool PickupItem = false;
-
     private Rigidbody rb;
 
 	// Use this for initialization
@@ -20,32 +19,15 @@ public class PickupObject : MonoBehaviour {
 
     void OnTriggerStay(Collider other)
     {
-        //if (Input.GetButton("Pickup"))
-        //{
-        //    // drop item  
-        //}
-
         GameObject Player = GameObject.Find("AdvancedPlayer");
         PlayerInteractions playerScript = Player.GetComponent<PlayerInteractions>();
         PickupItem = playerScript.Pickup;
 
         if (other.gameObject.tag == "SnapPoint" && PickupItem == true)
         {
-            Debug.Log("Snapped!");
+            //Debug.Log("Snapped!");
             transform.position = other.gameObject.transform.position; // set position to SnapPoint
         }
-
-    //    if (other.gameObject.tag == "Grab")
-    //    {
-    //        Debug.Log("Grab Snap");
-    //        other.transform.parent.gameObject.transform.position = transform.position; // set it's parent's position to the snap point
-    //    }
-
-    //    if (other.gameObject.tag == "Crowbar")
-    //    {
-    //        Debug.Log("Crowbar Snap");
-    //        //other.transform.parent.gameObject.transform.position = transform.position; // set it's parent's position to the snap point
-    //        other.gameObject.transform.position = transform.position;
     }
 
 }

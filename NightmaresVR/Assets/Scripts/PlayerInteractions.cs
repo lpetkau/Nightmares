@@ -9,9 +9,12 @@ public class PlayerInteractions : MonoBehaviour {
     public float maxDistance = 100;
     public LayerMask layermask;
 
-
-
-    public bool Pickup = false;
+    public Transform SnapPoint_1; // snapPoint for the Item
+    public Transform SnapPoint_2; // snapPoint for the Item while lifted
+    public Transform Item; // object your holding/picking up
+    public Rigidbody ItemRB; // Rigidbody of Picked-Up Item
+    public bool Pickup = false; // bool for determining if to drop or hold
+    public float fixedRotation = 0;
 
 	// Use this for initialization
 	void Start () {
@@ -21,9 +24,9 @@ public class PlayerInteractions : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
-        if (Input.GetButtonDown("Pickup"))
+        if (Input.GetButtonDown("Pickup")) // F
         {
-            // Swap Pickup true/false
+            // toggle Pickup true/false
             if(Pickup == false)
             {
                 //Debug.Log("Pickup TRUE");
@@ -35,80 +38,56 @@ public class PlayerInteractions : MonoBehaviour {
                 Pickup = false;
             }
 
-
-            // do raycast
-            // if raycast fails, Pickup = false
-
+            // raycast to see what object you're attempting to pickup
             if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, maxDistance, layermask)) // Camera.main.transform.forward
             {
-
                 if (hit.transform.gameObject.tag != "MainCamera" && hit.transform.gameObject.tag != "Player" && hit.transform.gameObject.tag != "LeftHand" && hit.transform.gameObject.tag != "RightHand")
                 {
-                    Debug.Log("Hit");
-                    Debug.Log(hit.distance);
-                    Debug.Log(hit.transform.gameObject.tag);
-                    Debug.Log(hit.transform.name);
+                    //Debug.Log("Hit");
+                    //Debug.Log(hit.distance);
+                    //Debug.Log(hit.transform.gameObject.tag);
+                    //Debug.Log(hit.transform.name);
+
+                    // Pickup Item
+                    if (hit.transform.gameObject.tag == "Crowbar" && Pickup == true)
+                    {
+                        //Debug.Log("Holding Item");
+                        // Get Reference for Item and SnapPoint
+                        SnapPoint_1 = this.gameObject.transform.GetChild(3);
+                        Item = hit.transform.gameObject.transform;
+
+                        // set position to SnapPoint, Set rotation to (0,0,0) and freeze rotation
+                        Item.position = SnapPoint_1.transform.position;
+                        Item.eulerAngles = new Vector3(fixedRotation, fixedRotation, fixedRotation);
+                        Item.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
+                    }
+                    else // Drop Item
+                    {
+                        //Debug.Log("Droping Item");
+                        Item.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+                    }
                 }
                 else
                 {
                     Debug.Log("Hit Player Component");
+                    Pickup = false; // failed to pickup an item
                 }
-
             }
+        } // end PICKUP
 
+        //if (Input.GetButtonDown("Lift")) // LMB
+        //{
+        //    Debug.Log("Lift");
+        //    SnapPoint_2 = this.gameObject.transform.GetChild(4);
+        //    Item.position = SnapPoint_2.transform.position;
+        //}
 
-            //int layerMask = 10; // Layer = Grabables
-            //RaycastHit hit;
+        //if (Input.GetButtonUp("Lift")) // LMB
+        //{
+        //    Debug.Log("Un-Lift");
+        //    Item.position = SnapPoint_1.transform.position;
+        //}
 
-
-            // Does the ray intersect any objects from the Grabables Layer
-
-            //if (Physics.Raycast(transform.position, Camera.main.transform.forward, out hit, Mathf.Infinity, layerMask)) // QueryTriggerInteraction.UseGlobal
-            //{
-            //    if(hit.transform.gameObject.tag != "MainCamera" && hit.transform.gameObject.tag != "Player" && hit.transform.gameObject.tag != "LeftHand" && hit.transform.gameObject.tag != "RightHand")
-            //    {
-            //        Debug.Log("Hit");
-            //        Debug.DrawRay(transform.position, Camera.main.transform.forward, Color.yellow);
-            //        Debug.Log(hit.distance);
-            //        Debug.Log(hit.transform.gameObject.tag);
-            //        //Destroy(hit.transform.gameObject);
-            //    }
-            //    else
-            //    {
-            //        Debug.Log("Hit Player Component");
-            //    }
-
-            //}
-            //else
-            //{
-            //    //Debug.DrawRay(transform.position, Camera.main.transform.forward * 1000, Color.white);
-            //    Debug.Log("Did not Hit");
-            //    Debug.Log(hit.distance);
-            //}
-
-
-
-            //Physics.Raycast(transform.position, Camera.main.transform.forward, 0, 1000, 0);
-
-            //Vector3 fwd = transform.TransformDirection(Vector3.forward);
-            //Vector3 Ray = transform.TransformDirection(Camera.main.transform.forward);
-
-            //if (Physics.Raycast(transform.position, Ray, 2))
-            //{
-            //    print("There is something in front of the object!");
-            //}
-
-
-        }
-
-
-
-	}
-
-    void GrabItem()
-    {
-        GameObject Crowbar = GameObject.Find("Crowbar");
-        Crowbar.transform.position = transform.position;
-    }
+    } // end UPDATE
 
 }
