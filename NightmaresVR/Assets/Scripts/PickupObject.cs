@@ -18,7 +18,7 @@ public class PickupObject : MonoBehaviour {
 		
 	}
 
-    void OnTriggerEnter(Collider other)
+    void OnTriggerStay(Collider other)
     {
         //if (Input.GetButton("Pickup"))
         //{
