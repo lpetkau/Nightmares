@@ -232,7 +232,6 @@
      <Compile Include="Assets\Scripts\PlayerManager.cs" />
      <Compile Include="Assets\Scripts\screw.cs" />
      <Compile Include="Assets\Scripts\Screwdrivers.cs" />
-     <Compile Include="Assets\Scripts\SnapPoint.cs" />
      <Compile Include="Assets\Scripts\Stairs_Bot.cs" />
      <Compile Include="Assets\Scripts\Stairs_Top.cs" />
      <Compile Include="Assets\Scripts\Tap.cs" />
