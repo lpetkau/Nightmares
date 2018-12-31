@@ -19,7 +19,7 @@ public class Stairs_Top : MonoBehaviour {
 
     void Update()
     {
-        // RAISE Stairs
+        //RAISE Stairs
         if (!IsOpen && DesiredOpen)
         {
             if (count < 120)
@@ -63,11 +63,11 @@ public class Stairs_Top : MonoBehaviour {
     {
         if (other.gameObject.tag == "Player" && isActive == true)
         {
-            Physics.IgnoreCollision(this.GetComponent<BoxCollider>(), other.gameObject.GetComponent<BoxCollider>()); // player ignore Stairs
+            Physics.IgnoreCollision(this.GetComponent<BoxCollider>(), other.gameObject.GetComponent<CharacterController>()); // player ignore Stairs
         }
         else if (other.gameObject.tag == "Player" && isActive == false)
         {
-            Physics.IgnoreCollision(this.GetComponent<BoxCollider>(), other.gameObject.GetComponent<BoxCollider>(), false); // player stop ignoring Stairs
+            Physics.IgnoreCollision(this.GetComponent<BoxCollider>(), other.gameObject.GetComponent<CharacterController>(), false); // player stop ignoring Stairs
         }
 
         if (other.gameObject.tag == "Stairs")
