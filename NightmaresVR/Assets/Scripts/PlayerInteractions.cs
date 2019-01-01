@@ -9,16 +9,11 @@ public class PlayerInteractions : MonoBehaviour {
     public float maxDistance = 100;
     public LayerMask layermask;
 
-    public Transform SnapPoint; // snapPoint for the Item
-    public Transform Item; // object your holding/picking up
-    //public Rigidbody ItemRB; // Rigidbody of Picked-Up Item
+    private Transform SnapPoint; // snapPoint for the Item
+    private Transform Item; // object your holding/picking up
     public bool Pickup = false; // bool for determining if to drop or hold
     public float fixedRotation = 0;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
 	
 	// Update is called once per frame
 	void Update () {
@@ -37,33 +32,61 @@ public class PlayerInteractions : MonoBehaviour {
                 Pickup = false;
             }
 
-            // raycast to see what object you're attempting to pickup
+            //// raycast to see what object you're attempting to pickup
             if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, maxDistance, layermask)) // Camera.main.transform.forward
             {
-
-                Debug.Log(hit.transform.name);
-                Debug.Log(hit.transform.tag);
-
+                //Debug.Log(hit.transform.name);
+                //Debug.Log(hit.transform.tag);
 
                 if (hit.transform.gameObject.tag != "MainCamera" && hit.transform.gameObject.tag != "Player" && hit.transform.gameObject.tag != "LeftHand" && hit.transform.gameObject.tag != "RightHand")
                 {
-                    // Pickup Item
-                    if ((hit.transform.gameObject.tag == "Grab" && Pickup == true) || hit.transform.gameObject.tag == "Crowbar" && Pickup == true)
-                    {
-                        //Debug.Log("Holding Item");
-                        // Get Reference for Item and SnapPoint
-                        SnapPoint = this.gameObject.transform.GetChild(3);
-                        Item = hit.transform.gameObject.transform;
+                    // Get Reference for Item and SnapPoint
+                    SnapPoint = this.gameObject.transform.GetChild(3);
+                    Item = hit.transform.gameObject.transform;
 
+                    // Pickup Item
+                    if ((hit.transform.gameObject.tag == "Grab" && Pickup == true) || (hit.transform.gameObject.tag == "Crowbar" && Pickup == true) || (hit.transform.gameObject.tag == "Key" && Pickup == true))
+                    {
+                        Debug.Log("Holding Item");
                         // set position to SnapPoint, Set rotation to (0,0,0) and freeze rotation
                         Item.position = SnapPoint.transform.position;
                         Item.eulerAngles = new Vector3(fixedRotation, fixedRotation, fixedRotation);
                         Item.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
+
+                        if (hit.transform.gameObject.tag == "Key")
+                        {
+                            if (hit.transform.name == "Key_1")
+                            {
+                                Debug.Log("Obtained Key_1");
+                                Destroy(hit.transform.gameObject);
+                                GameManager.Instance.Door1Locked = false;
+                                // unlock corresponding door
+                            }
+                            else if (hit.transform.name == "Key_2")
+                            {
+                                Debug.Log("Obtained Key_2");
+                                Destroy(hit.transform.gameObject);
+                                GameManager.Instance.Door2Locked = false;
+                                // unlock corresponding door
+                            }
+                            else if (hit.transform.name == "Key_3")
+                            {
+                                Debug.Log("Obtained Key_3");
+                                Destroy(hit.transform.gameObject);
+                                GameManager.Instance.Door3Locked = false;
+                                // unlock corresponding door
+                            }
+                        }
+
                     }
-                    else // Drop Item
+                    else if (Pickup == false)// Drop Item
                     {
-                        //Debug.Log("Droping Item");
-                        Item.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+                        Debug.Log("Droping Item");
+                        Item.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None; // remove all constraints
+                    }
+                    else // No Item to Pickup
+                    {
+                        Pickup = false;
                     }
                 }
                 else
@@ -72,8 +95,15 @@ public class PlayerInteractions : MonoBehaviour {
                     Pickup = false; // failed to pickup an item
                 }
             }
-        } // end PICKUP
 
+            //if (Pickup == false)
+            //{
+            //    Debug.Log("Droping Item");
+            //    Item.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None; // remove all constraints
+            //}
+
+
+        } // end PICKUP
     } // end UPDATE
 
 }

@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour {
     public int MentalHealth = 100;
     public bool Door1Locked = true;
     public bool Door2Locked = true;
+    public bool Door3Locked = true;
 
     private void Awake()
     {

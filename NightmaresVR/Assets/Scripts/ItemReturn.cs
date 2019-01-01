@@ -8,16 +8,27 @@ public class ItemReturn : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Crowbar" || other.tag == "Grab")
+        if(other.tag == "Key" || other.tag == "Crowbar" || other.tag == "Grab")
         {
             GameObject Player = GameObject.Find("AdvancedPlayer");
             PlayerInteractions playerScript = Player.GetComponent<PlayerInteractions>();
             playerScript.Pickup = true; // activate SnapPoint
             ItemRotation = playerScript.fixedRotation;
+
+            if (transform.parent != null) // Null Reference Exeption causes item to fall through floor
+            {
+                other.transform.parent.position = Player.transform.GetChild(3).position; // move item to SnapPoint
+                other.transform.parent.eulerAngles = new Vector3(ItemRotation, ItemRotation, ItemRotation);
+                other.transform.parent.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
+            }
+            else
+            {
+                other.transform.position = Player.transform.GetChild(3).position; // move item to SnapPoint
+                other.transform.eulerAngles = new Vector3(ItemRotation, ItemRotation, ItemRotation);
+                other.transform.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
+            }
+
             
-            other.transform.parent.position = Player.transform.GetChild(3).position; // move item to SnapPoint
-            other.transform.parent.eulerAngles = new Vector3(ItemRotation, ItemRotation, ItemRotation);
-            other.transform.parent.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
         }
     }
 
