@@ -54,6 +54,7 @@ public class HandGrabbing : MonoBehaviour
                 //if there are colliders, take the first one if we press the grab button and it has the tag for grabbing
                 if (Input.GetAxis(InputName) >= 0.01f && colliders[0].transform.CompareTag(GrabTag))
                 {
+                    
                     //set current object to the object we have picked up
                     _currentObject = colliders[0].transform;
 
@@ -70,6 +71,10 @@ public class HandGrabbing : MonoBehaviour
                     _currentObject.GetComponent<Rigidbody>().isKinematic = true;
 
 
+                }
+                else if (Input.GetAxis(InputName) >= 0.1f)
+                {
+                    print("SQUEEZE");
                 }
             }
 

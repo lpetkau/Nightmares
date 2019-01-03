@@ -77,8 +77,8 @@ public class vp_FPInput : vp_Component
 	/// </summary>
 	protected override void OnEnable()
 	{
-        //rightHand = GameObject.FindGameObjectWithTag("RightHand");
-        //leftHand = GameObject.FindGameObjectWithTag("LeftHand");
+        rightHand = GameObject.FindGameObjectWithTag("RightHand");
+        leftHand = GameObject.FindGameObjectWithTag("LeftHand");
         
         if (XRDevice.isPresent)
         {
@@ -174,11 +174,19 @@ public class vp_FPInput : vp_Component
 	protected virtual void InputMove()
 	{
 
-		// NOTE: you could also use 'GetAxis', but that would add smoothing
-		// to the input from both UFPS and from Unity, and might require some
-		// tweaking in order not to feel laggy
+        // NOTE: you could also use 'GetAxis', but that would add smoothing
+        // to the input from both UFPS and from Unity, and might require some
+        // tweaking in order not to feel laggy
+        if (XRDevice.isPresent)
+        {
+            FPPlayer.InputMoveVector.Set(new Vector2(vp_Input.GetAxisRaw("VRHorizontal"), vp_Input.GetAxisRaw("VRVertical")));
+        }
+        else
+        {
+            FPPlayer.InputMoveVector.Set(new Vector2(vp_Input.GetAxisRaw("Horizontal"), vp_Input.GetAxisRaw("Vertical")));
+        }
 
-		FPPlayer.InputMoveVector.Set(new Vector2(vp_Input.GetAxisRaw("Horizontal"), vp_Input.GetAxisRaw("Vertical")));
+		
 
 	}
 

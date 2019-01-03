@@ -59,9 +59,9 @@ public class screw : MonoBehaviour {
 
     public void OnTriggerEnter(Collider collider)
     {
-        switch (collider.gameObject.tag)
+        switch (collider.gameObject.name)
         {
-            case "1":
+            case "Screwdriver_Cross":
                 if (Screwedonce == false)
                 {
                     screwed = true;
