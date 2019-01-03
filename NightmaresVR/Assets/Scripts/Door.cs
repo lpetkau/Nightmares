@@ -35,22 +35,22 @@ public class Door : MonoBehaviour {
                 }
             } // end OPEN DOOR
 
-        // CLOSE DOOR
-        if (IsOpen && !DesiredOpen)
-        {
-            if (count < 90)
+            // CLOSE DOOR
+            if (IsOpen && !DesiredOpen)
             {
-                count += 1;
-                rb.transform.Rotate(-1, 0, 0);
-            }
-            else
-            {
-                IsOpen = false;
-                count = 0;
-            }
-        } // end CLOSE DOOR
-}//end Locked door LOCK
-    }
+                if (count < 90)
+                {
+                    count += 1;
+                    rb.transform.Rotate(-1, 0, 0);
+                }
+                else
+                {
+                    IsOpen = false;
+                    count = 0;
+                }
+            } // end CLOSE DOOR
+        }//end Locked door LOCK
+    }// end UPDATE
 
     public void SetDesiredOpen()
     {
