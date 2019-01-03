@@ -11,9 +11,9 @@ public class Locks : MonoBehaviour {
 
     public void OnTriggerEnter(Collider collider)
     {
-        switch (collider.gameObject.tag)
+        switch (collider.gameObject.name)
         {
-            case "Grab":
+            case "Key1":
                 // Door1
                 if (collider.gameObject.name == "Key1"  &&  DoorNumber == 1)
                 {
@@ -21,22 +21,14 @@ public class Locks : MonoBehaviour {
                      Debug.Log("GameManager.Instance.Door1Locked");
                 }
 
-                else if(collider.gameObject.name == "Key2" && DoorNumber == 1)
-                {
-                    GameManager.Instance.Door2Locked = false;
-                    Debug.Log("wrong Key");
-                }
-                //Door2
-                if (collider.gameObject.name == "Key1" && DoorNumber == 2)
-                {
-                    GameManager.Instance.Door1Locked = false;
-                    Debug.Log("wrong Key");
-                }
+                break;
 
-                else if (collider.gameObject.name == "Key2" && DoorNumber == 2)
+            case "Key2":
+                // Door1
+                if (collider.gameObject.name == "Key2" && DoorNumber == 1)
                 {
-                    GameManager.Instance.Door2Locked = false;
                    
+                    Debug.Log("wrong door");
                 }
 
                 break;

@@ -12,7 +12,8 @@ public class NightlightController : MonoBehaviour {
 
     public float deathRate;
     public float chargeRate;
-
+    public GameObject Spidey;
+    public GameObject Spidey1;
 
     private bool charging;
 
@@ -49,6 +50,13 @@ public class NightlightController : MonoBehaviour {
                     charging = true;
                     print("CHARGING");
                 }
+                if (other.gameObject == charger[2])
+                {
+                    charging = true;
+                    print("BYE SPIDER");
+                    Spidey.SetActive(false);
+                    Spidey1.SetActive(false);
+                }
             }
         }
         //check other possible collisions
@@ -65,6 +73,12 @@ public class NightlightController : MonoBehaviour {
                 {
                     charging = false;
                     print("Dying");
+                }
+                if (other.gameObject == charger[0])
+                {
+                    charging = false;
+                    print("Dying");
+                    print("DoorUnlocked");
                 }
             }
         }
