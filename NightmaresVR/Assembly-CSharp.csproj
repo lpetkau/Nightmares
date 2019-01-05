@@ -260,6 +260,7 @@
      <Compile Include="Assets\Soja Exiles\SE Basic Assets\Scripts and Animations\Windows\opencloseWindow1.cs" />
      <Compile Include="Assets\Test\EnemyHealth.cs" />
      <Compile Include="Assets\Test\UIController.cs" />
+     <Compile Include="Assets\Wristwatch\Scripts\RealClock.cs" />
      <None Include="Assets\Prefabs\Scripts\Presets\Standard\Shooter\ShooterPistolOutOfControl.txt" />
      <None Include="Assets\MagicMirror\Prefab\MirrorShaderOld.shader" />
      <None Include="Assets\Prefabs\Scripts\Presets\WeaponsHD\Pistol01\ShooterPistol01OutOfControl.txt" />
@@ -381,6 +382,7 @@
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\MechWeapon.txt" />
      <None Include="Assets\ProCore\ProBuilder\Shader\pb_HideVertices.shader" />
      <None Include="Assets\Prefabs\Scripts\Presets\WeaponsHD\Knife01\KnifeAttackToDownRight.txt" />
+     <None Include="Assets\Wristwatch\Shaders\AO.shader" />
      <None Include="Assets\Prefabs\Scripts\Presets\WeaponsHD\Grenade01\WeaponGrenade01Zoom.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\ModernCameraCrouch.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\SniperInput.txt" />
