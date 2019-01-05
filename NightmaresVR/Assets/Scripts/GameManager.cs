@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour {
     public bool Door1Locked = true;
     public bool Door2Locked = true;
     public bool Door3Locked = true;
+   
 
     private void Awake()
     {
