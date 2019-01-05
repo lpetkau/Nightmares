@@ -216,6 +216,8 @@
      <Compile Include="Assets\Scripts\AtticStairs.cs" />
      <Compile Include="Assets\Scripts\Bathroom_ObjectDestroy.cs" />
      <Compile Include="Assets\Scripts\BodyGlow.cs" />
+     <Compile Include="Assets\Scripts\BrLights.cs" />
+     <Compile Include="Assets\Scripts\BRlightsoff.cs" />
      <Compile Include="Assets\Scripts\Door.cs" />
      <Compile Include="Assets\Scripts\EnemyController.cs" />
      <Compile Include="Assets\Scripts\EyeLight.cs" />
