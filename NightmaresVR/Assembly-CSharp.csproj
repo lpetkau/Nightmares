@@ -55,9 +55,11 @@
   <ItemGroup>
      <Compile Include="Assets\Clock\Scripts\Clock.cs" />
      <Compile Include="Assets\MagicMirror\Demo\DemoScript.cs" />
+     <Compile Include="Assets\MagicMirror\Prefab\MirrorCamera_Bathroom.cs" />
      <Compile Include="Assets\MagicMirror\Prefab\MirrorCameraScript.cs" />
      <Compile Include="Assets\MagicMirror\Prefab\MirrorReflectionScript.cs" />
      <Compile Include="Assets\MagicMirror\Prefab\MirrorScript.cs" />
+     <Compile Include="Assets\MagicMirror\Prefab\MirrorScript_Bathroom.cs" />
      <Compile Include="Assets\Prefabs\Props\3DTOYS\rotatecamera.cs" />
      <Compile Include="Assets\Prefabs\Scripts\Core\Attributes\vp_FloatFieldAttribute.cs" />
      <Compile Include="Assets\Prefabs\Scripts\Core\Attributes\vp_HelpBoxAttribute.cs" />
@@ -215,11 +217,13 @@
      <Compile Include="Assets\ProCore\ProBuilder\API Examples\Vertex Colors\HighlightNearestFace.cs" />
      <Compile Include="Assets\Scripts\Bathroom_ObjectDestroy.cs" />
      <Compile Include="Assets\Scripts\BodyGlow.cs" />
+     <Compile Include="Assets\Scripts\CreateObject.cs" />
      <Compile Include="Assets\Scripts\Door.cs" />
      <Compile Include="Assets\Scripts\EnemyController.cs" />
      <Compile Include="Assets\Scripts\EyeLight.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\HandGrabbing.cs" />
+     <Compile Include="Assets\Scripts\HintScript.cs" />
      <Compile Include="Assets\Scripts\LightDetection.cs" />
      <Compile Include="Assets\Scripts\Locks.cs" />
      <Compile Include="Assets\Scripts\mentalHealth.cs" />
@@ -229,7 +233,7 @@
      <Compile Include="Assets\Scripts\PlayerManager.cs" />
      <Compile Include="Assets\Scripts\screw.cs" />
      <Compile Include="Assets\Scripts\Screwdrivers.cs" />
-     <Compile Include="Assets\Scripts\Tap.cs" />
+     <Compile Include="Assets\Scripts\ScrollScript.cs" />
      <Compile Include="Assets\Scripts\vent.cs" />
      <Compile Include="Assets\Scripts\ventScript.cs" />
      <Compile Include="Assets\ShadowDetect\Scripts\Cameras\DragMouseOrbit.cs" />
@@ -304,6 +308,7 @@
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\Persp1999Weapon.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\FreezeController.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\MeleeWeaponSwingDown.txt" />
+     <None Include="Assets\Toys\Description\Description.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\CowboyController.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\WeaponsHD\Grenade01\WeaponGrenade01Attack.txt" />
      <None Include="Assets\Prefabs\Scripts\Presets\Demo\Persp1999Input.txt" />
