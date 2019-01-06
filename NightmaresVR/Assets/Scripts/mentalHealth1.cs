@@ -10,7 +10,10 @@ public class mentalHealth1 : MonoBehaviour {
       
             Active = false;
             yield return new WaitForSeconds(1);
+        if (GameManager.Instance.MentalHealth < 100)
+        {
             GameManager.Instance.MentalHealth += 1;
+        }
             Active = true;
         
     }
@@ -18,8 +21,14 @@ public class mentalHealth1 : MonoBehaviour {
 
     void Update () {
         Debug.Log(GameManager.Instance.MentalHealth);
-       
-        if (Active == true)
+
+       if(GameManager.Instance.MentalHealth > 100)
+        {
+            GameManager.Instance.MentalHealth = 100;
+        }
+
+
+        if (Active == true && GameManager.Instance.MentalHealth <= 100)
         {
              StartCoroutine(Counter());
             

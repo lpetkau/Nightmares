@@ -77,26 +77,18 @@ public class vp_CharacterController : vp_Controller
 	/// </summary>
 	protected override void RefreshCollider()
 	{
-        if (XRDevice.isPresent)
-        {
-            CharacterController.height = Camera.transform.position.x;
-            CharacterController.center = Camera.transform.position / 2;
-        }
-        else
-        {
-            if (Player.Crouch.Active && !(MotorFreeFly && !Grounded))	// crouching & not flying
-		    {
-			    CharacterController.height = m_NormalHeight * PhysicsCrouchHeightModifier;
-			    CharacterController.center = m_NormalCenter * PhysicsCrouchHeightModifier;
-		    }
-		    else	// standing up (whether flying or not)
-		    {
-			    CharacterController.height = m_NormalHeight;
-			    CharacterController.center = m_NormalCenter;
-		    }
-        }
-		
-
+        
+        if (Player.Crouch.Active && !(MotorFreeFly && !Grounded))	// crouching & not flying
+		{
+		 CharacterController.height = m_NormalHeight * PhysicsCrouchHeightModifier;
+		 CharacterController.center = m_NormalCenter * PhysicsCrouchHeightModifier;
+		}
+		else	// standing up (whether flying or not)
+		{
+		 CharacterController.height = m_NormalHeight;
+		 CharacterController.center = m_NormalCenter;
+		}
+        
 	}
 
 
