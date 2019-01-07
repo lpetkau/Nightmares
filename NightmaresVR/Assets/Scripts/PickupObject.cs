@@ -26,8 +26,9 @@ public class PickupObject : MonoBehaviour {
         GameObject Player = GameObject.Find("AdvancedPlayer");
         PlayerInteractions playerScript = Player.GetComponent<PlayerInteractions>();
         PickupItem = playerScript.Pickup;
-        SnapPoint = Player.transform.Find("SnapPoint");
-        KeyRing = Player.transform.Find("KeyRing");
+        GameObject SnapPoint = GameObject.FindGameObjectWithTag("SnapPoint");
+        GameObject KeyRing = GameObject.FindGameObjectWithTag("KeyRing");
+        //KeyRing = Player.transform.Find("KeyRing");
         //SnapPoint = Player.transform.GetChild(6); // Advanced Player 1st child
         //KeyRing = Player.transform.GetChild(7); // Advanced Player 2nd child
 
@@ -42,7 +43,7 @@ public class PickupObject : MonoBehaviour {
             }
             else if (HyperSnap == true && PickupItem == true)
             {
-                transform.position = KeyRing.position;
+                transform.position = KeyRing.transform.position;
             }
             else
             {
@@ -59,7 +60,7 @@ public class PickupObject : MonoBehaviour {
             }
             else if (HyperSnap == true && PickupItem == true)
             {
-                transform.position = SnapPoint.position;
+                transform.position = SnapPoint.transform.position;
             }
             else
             {

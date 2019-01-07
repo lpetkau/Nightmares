@@ -23,7 +23,7 @@ public class ItemReturn : MonoBehaviour {
             }
             else
             {
-                other.transform.parent.position = Player.transform.Find("SnapPoint").position; // move item to SnapPoint
+                other.transform.position = Player.transform.Find("SnapPoint").position; // move item to SnapPoint
                 other.transform.eulerAngles = new Vector3(ItemRotation, ItemRotation, ItemRotation);
                 other.transform.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
             }

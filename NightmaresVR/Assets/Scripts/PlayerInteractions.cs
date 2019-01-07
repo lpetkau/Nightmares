@@ -42,7 +42,7 @@ public class PlayerInteractions : MonoBehaviour {
                 {
                     // Get Reference for Item and SnapPoint
                     //SnapPoint = this.gameObject.transform.GetChild(3);
-                    SnapPoint = this.gameObject.transform.Find("SnapPoint");
+                    GameObject SnapPoint = GameObject.FindGameObjectWithTag("SnapPoint");
 ;
                     Item = hit.transform.gameObject.transform;
 
