@@ -6,31 +6,28 @@ public class TapTriggers : MonoBehaviour
 {
 
     public Transform Spawnpoint;
-    public Rigidbody Prefab;
+    public GameObject Prefab;
     public GameObject uiObject;
 
     void Start()
     {
 
         uiObject.SetActive(false);
-    }
-
-    void OnTriggerEnter()
-    {
-        Rigidbody RigidPrefab;
-        RigidPrefab = Instantiate(Prefab, Spawnpoint.position, Spawnpoint.rotation) as Rigidbody;
+        Prefab.SetActive(false);
     }
 
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
-        {
-            GetComponentInChildren<ParticleSystem>().Play();
-        }
+        
     
         if (other.gameObject.tag == "Player")
         {
+
+            
+            GetComponentInChildren<ParticleSystem>().Play();
+
+            Prefab.SetActive(true);
             uiObject.SetActive(true);
             StartCoroutine("WaitForSec");
         }
