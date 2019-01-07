@@ -26,8 +26,11 @@ public class PickupObject : MonoBehaviour {
         GameObject Player = GameObject.Find("AdvancedPlayer");
         PlayerInteractions playerScript = Player.GetComponent<PlayerInteractions>();
         PickupItem = playerScript.Pickup;
-        SnapPoint = Player.transform.GetChild(3);
-        KeyRing = Player.transform.GetChild(4);
+        SnapPoint = Player.transform.Find("SnapPoint");
+        KeyRing = Player.transform.Find("KeyRing");
+        //SnapPoint = Player.transform.GetChild(6); // Advanced Player 1st child
+        //KeyRing = Player.transform.GetChild(7); // Advanced Player 2nd child
+
 
         if (this.gameObject.tag == "Key")
         {
