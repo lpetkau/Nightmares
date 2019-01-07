@@ -26,7 +26,7 @@ public class AtticStairs : MonoBehaviour {
         }
         else if (TopState == true)
         {
-            this.gameObject.GetComponentInChildren<Stairs_Top>().SetDesiredClosed();
+            //this.gameObject.GetComponentInChildren<Stairs_Top>().SetDesiredClosed();
         }
 
         if (BotState == false)
@@ -35,7 +35,7 @@ public class AtticStairs : MonoBehaviour {
         }
         else if (BotState == true)
         {
-            this.gameObject.GetComponentInChildren<Stairs_Bot>().SetDesiredClosed();
+            //this.gameObject.GetComponentInChildren<Stairs_Bot>().SetDesiredClosed();
         }
     }
 

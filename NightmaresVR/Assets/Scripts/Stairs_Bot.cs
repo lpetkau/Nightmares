@@ -76,11 +76,11 @@ public class Stairs_Bot : MonoBehaviour {
             Physics.IgnoreCollision(this.GetComponent<BoxCollider>(), other.gameObject.GetComponent<BoxCollider>()); // Stairs ignore itself
         }
 
-        if (other.gameObject.tag == "Crowbar" && isActive == true)
+        if (other.gameObject.name == "Crowbar" && isActive == true)
         {
             Physics.IgnoreCollision(this.GetComponent<BoxCollider>(), other.gameObject.GetComponent<BoxCollider>()); // Stairs ignore Crowbar
         }
-        else if (other.gameObject.tag == "Crowbar")
+        else if (other.gameObject.name == "Crowbar")
         {
             Physics.IgnoreCollision(this.GetComponent<BoxCollider>(), other.gameObject.GetComponent<BoxCollider>(), false); // Stairs stop ignoring Crowbar
             this.gameObject.GetComponentInParent<AtticStairs>().CrowbarInteract();

@@ -17,7 +17,7 @@ public class mentalHealth : MonoBehaviour {
 
 
     void Update () {
-        Debug.Log(GameManager.Instance.MentalHealth);
+        //Debug.Log(GameManager.Instance.MentalHealth);
        
         if (Active == true)
         {

@@ -38,10 +38,12 @@ public class PlayerInteractions : MonoBehaviour {
                 //Debug.Log(hit.transform.name);
                 //Debug.Log(hit.transform.tag);
 
-                if (hit.transform.gameObject.tag != "MainCamera" && hit.transform.gameObject.tag != "Player" && hit.transform.gameObject.tag != "LeftHand" && hit.transform.gameObject.tag != "RightHand")
+                if (hit.transform.gameObject.tag != "MainCamera" && hit.transform.gameObject.tag != "Player" && hit.transform.gameObject.tag != "LeftHand" && hit.transform.gameObject.tag != "RightHand" && hit.transform.gameObject.tag != "Untagged")
                 {
                     // Get Reference for Item and SnapPoint
-                    SnapPoint = this.gameObject.transform.GetChild(3);
+                    //SnapPoint = this.gameObject.transform.GetChild(3);
+                    SnapPoint = this.gameObject.transform.Find("SnapPoint");
+;
                     Item = hit.transform.gameObject.transform;
 
                     // Pickup Item
