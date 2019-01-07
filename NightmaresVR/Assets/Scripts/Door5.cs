@@ -2,16 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Door : MonoBehaviour {
+public class Door5 : MonoBehaviour
+{
 
     private Rigidbody rb;
-    
+
     public bool DesiredOpen = false;
     private bool IsOpen = false;
     private int count = 0;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start()
+    {
         rb = GetComponent<Rigidbody>();
     }
 
@@ -19,7 +21,7 @@ public class Door : MonoBehaviour {
     {
         // OPEN DOOR
         // Is Door Locked
-        if (GameManager.Instance.Door1Locked == false)
+        if (GameManager.Instance.Door5Locked == false)
         {
             if (!IsOpen && DesiredOpen)
             {
@@ -54,7 +56,7 @@ public class Door : MonoBehaviour {
 
     public void SetDesiredOpen()
     {
-        if (GameManager.Instance.Door1Locked == false)
+        if (GameManager.Instance.Door3Locked == false)
         {
             DesiredOpen = true;
         }
@@ -62,7 +64,7 @@ public class Door : MonoBehaviour {
 
     public void SetDesiredClosed()
     {
-        if (GameManager.Instance.Door1Locked == false)
+        if (GameManager.Instance.Door3Locked == false)
         {
             DesiredOpen = false;
         }
@@ -70,17 +72,17 @@ public class Door : MonoBehaviour {
 
     public bool CheckState()
     {
-       
-            if (IsOpen)
-            {
-                return true;
-            }
-        
-            else
-            {
-                return false;
-            }
-        
+
+        if (IsOpen)
+        {
+            return true;
+        }
+
+        else
+        {
+            return false;
+        }
+
     }
- 
 }
+

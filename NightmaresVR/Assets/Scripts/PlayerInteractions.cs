@@ -55,30 +55,37 @@ public class PlayerInteractions : MonoBehaviour {
                         Item.eulerAngles = new Vector3(fixedRotation, fixedRotation, fixedRotation);
                         Item.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
 
-                        if (hit.transform.gameObject.tag == "Key")
-                        {
-                            if (hit.transform.name == "Key_1")
+                        
+                            if (hit.transform.gameObject.name == "Key_1")
                             {
                                 Debug.Log("Obtained Key_1");
                                 Destroy(hit.transform.gameObject);
                                 GameManager.Instance.Door1Locked = false;
+                                print(GameManager.Instance.Door1Locked);
                                 // unlock corresponding door
                             }
-                            else if (hit.transform.name == "Key_2")
+                            else if (hit.transform.gameObject.name == "Key_2")
                             {
                                 Debug.Log("Obtained Key_2");
                                 Destroy(hit.transform.gameObject);
                                 GameManager.Instance.Door2Locked = false;
                                 // unlock corresponding door
                             }
-                            else if (hit.transform.name == "Key_3")
+                            else if (hit.transform.gameObject.name == "Key_3")
                             {
                                 Debug.Log("Obtained Key_3");
                                 Destroy(hit.transform.gameObject);
                                 GameManager.Instance.Door3Locked = false;
                                 // unlock corresponding door
                             }
-                        }
+                            else if (hit.transform.gameObject.name == "Key_4")
+                            {
+                                Debug.Log("Obtained Key_4");
+                                Destroy(hit.transform.gameObject);
+                                GameManager.Instance.Door4Locked = false;
+                                // unlock corresponding door
+                            }
+                        
 
                     }
                     else if (Pickup == false)// Drop Item
