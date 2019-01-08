@@ -8,11 +8,11 @@ public class ItemReturn : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Key" || other.tag == "Grab")
+        if(other.tag == "Grab") // other.tag == "Key" || 
         {
             GameObject Player = GameObject.Find("AdvancedPlayer");
             PlayerInteractions playerScript = Player.GetComponent<PlayerInteractions>();
-            playerScript.Pickup = true; // activate SnapPoint
+            //playerScript.Pickup = true; // activate SnapPoint
             ItemRotation = playerScript.fixedRotation;
 
             if (transform.parent != null) // Null Reference Exeption causes item to fall through floor
