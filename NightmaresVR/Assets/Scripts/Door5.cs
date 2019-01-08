@@ -56,7 +56,7 @@ public class Door5 : MonoBehaviour
 
     public void SetDesiredOpen()
     {
-        if (GameManager.Instance.Door3Locked == false)
+        if (GameManager.Instance.Door5Locked == false)
         {
             DesiredOpen = true;
         }
@@ -64,7 +64,7 @@ public class Door5 : MonoBehaviour
 
     public void SetDesiredClosed()
     {
-        if (GameManager.Instance.Door3Locked == false)
+        if (GameManager.Instance.Door5Locked == false)
         {
             DesiredOpen = false;
         }
