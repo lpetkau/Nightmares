@@ -34,10 +34,12 @@ public class PickupObject : MonoBehaviour {
                 //Debug.Log("Snapped!");
                 transform.position = other.gameObject.transform.position; // set position to SnapPoint (constantly)
                 rbody.isKinematic = true;
+                this.transform.parent = Player.transform;
             }
             else
             {
                 rbody.isKinematic = false;
+                this.transform.parent = null;
             }
         }
         else if (PickupName == this.gameObject.name) // regular GRAB object
@@ -47,10 +49,12 @@ public class PickupObject : MonoBehaviour {
                 //Debug.Log("Snapped!");
                 transform.position = other.gameObject.transform.position; // set position to SnapPoint (constantly)
                 rbody.isKinematic = true;
+                this.transform.parent = Player.transform;
             }
             else
             {
                 rbody.isKinematic = false;
+                this.transform.parent = null;
             }
         }
     }
