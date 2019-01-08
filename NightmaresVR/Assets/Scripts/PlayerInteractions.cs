@@ -13,22 +13,23 @@ public class PlayerInteractions : MonoBehaviour {
     private Transform Item; // object your holding/picking up
     public bool Pickup = false; // bool for determining if to drop or hold
     public float fixedRotation = 0;
+    public string ItemName = "";
+    //private bool HoldingItem = false;
 
-	
-	// Update is called once per frame
-	void Update () {
+    // Update is called once per frame
+    void Update () {
 		
         if (Input.GetButtonDown("Pickup")) // F
         {
             // toggle Pickup true/false
             if(Pickup == false)
             {
-                //Debug.Log("Pickup TRUE");
+                Debug.Log("Pickup TRUE");
                 Pickup = true;
             }
             else
             {
-                //Debug.Log("Pickup FALSE");
+                Debug.Log("Pickup FALSE");
                 Pickup = false;
             }
 
@@ -36,26 +37,24 @@ public class PlayerInteractions : MonoBehaviour {
             if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, maxDistance, layermask)) // Camera.main.transform.forward
             {
                 //Debug.Log(hit.transform.name);
-                //Debug.Log(hit.transform.tag);
+                Debug.Log(hit.transform.tag);
 
                 if (hit.transform.gameObject.tag != "MainCamera" && hit.transform.gameObject.tag != "Player" && hit.transform.gameObject.tag != "LeftHand" && hit.transform.gameObject.tag != "RightHand" && hit.transform.gameObject.tag != "Untagged")
                 {
                     // Get Reference for Item and SnapPoint
-                    //SnapPoint = this.gameObject.transform.GetChild(3);
                     GameObject SnapPoint = GameObject.FindGameObjectWithTag("SnapPoint");
-;
                     Item = hit.transform.gameObject.transform;
 
                     // Pickup Item
-                    if ((hit.transform.gameObject.tag == "Grab" && Pickup == true) || (hit.transform.gameObject.tag == "Crowbar" && Pickup == true) || (hit.transform.gameObject.tag == "Key" && Pickup == true))
+                    if ((hit.transform.gameObject.tag == "Grab" && Pickup == true)) // || (hit.transform.gameObject.tag == "Crowbar" && Pickup == true) || (hit.transform.gameObject.tag == "Key" && Pickup == true)
                     {
                         Debug.Log("Holding Item");
                         // set position to SnapPoint, Set rotation to (0,0,0) and freeze rotation
                         Item.position = SnapPoint.transform.position;
                         Item.eulerAngles = new Vector3(fixedRotation, fixedRotation, fixedRotation);
                         Item.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
+                        ItemName = Item.name;
 
-                        
                             if (hit.transform.gameObject.name == "Key_1")
                             {
                                 Debug.Log("Obtained Key_1");
@@ -85,8 +84,6 @@ public class PlayerInteractions : MonoBehaviour {
                                 GameManager.Instance.Door4Locked = false;
                                 // unlock corresponding door
                             }
-                        
-
                     }
                     else if (Pickup == false)// Drop Item
                     {
@@ -95,6 +92,7 @@ public class PlayerInteractions : MonoBehaviour {
                     }
                     else // No Item to Pickup
                     {
+                        Debug.Log("No Item to Pickup");
                         Pickup = false;
                     }
                 }
@@ -104,15 +102,7 @@ public class PlayerInteractions : MonoBehaviour {
                     Pickup = false; // failed to pickup an item
                 }
             }
-
-            //if (Pickup == false)
-            //{
-            //    Debug.Log("Droping Item");
-            //    Item.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None; // remove all constraints
-            //}
-
-
         } // end PICKUP
     } // end UPDATE
-
 }
+

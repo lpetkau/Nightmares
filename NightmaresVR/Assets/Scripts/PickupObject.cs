@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class PickupObject : MonoBehaviour {
 
-    private bool PickupItem = false;
-    private bool HyperSnap = false;
+    public bool PickupItem = false;
+    public string PickupName = "";
+    //private bool HyperSnap = false;
 
     private Rigidbody rb;
     Transform SnapPoint;
@@ -15,62 +16,52 @@ public class PickupObject : MonoBehaviour {
 	void Start () {
         rb = GetComponent<Rigidbody>();
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
     void OnTriggerStay(Collider other)
     {
         GameObject Player = GameObject.Find("AdvancedPlayer");
         PlayerInteractions playerScript = Player.GetComponent<PlayerInteractions>();
         PickupItem = playerScript.Pickup;
+        PickupName = playerScript.ItemName;
         GameObject SnapPoint = GameObject.FindGameObjectWithTag("SnapPoint");
         GameObject KeyRing = GameObject.FindGameObjectWithTag("KeyRing");
         Rigidbody rbody = GetComponent<Rigidbody>();
-        //KeyRing = Player.transform.Find("KeyRing");
-        //SnapPoint = Player.transform.GetChild(6); // Advanced Player 1st child
-        //KeyRing = Player.transform.GetChild(7); // Advanced Player 2nd child
 
-
-        if (this.gameObject.tag == "Key")
+        if (PickupName == this.gameObject.name && (this.gameObject.name == "Key_1" || this.gameObject.name == "Key_2" || this.gameObject.name == "Key_3" || this.gameObject.name == "Key_4"))
         {
             if (other.gameObject.tag == "KeyRing" && PickupItem == true)
             {
                 //Debug.Log("Snapped!");
                 transform.position = other.gameObject.transform.position; // set position to SnapPoint (constantly)
-                HyperSnap = true;
                 rbody.isKinematic = true;
-            }
-            else if (HyperSnap == true && PickupItem == true)
-            {
-                transform.position = KeyRing.transform.position;
             }
             else
             {
-                HyperSnap = false;
                 rbody.isKinematic = false;
             }
         }
-        else
+        else if (PickupName == this.gameObject.name) // regular GRAB object
         {
             if (other.gameObject.tag == "SnapPoint" && PickupItem == true)
             {
                 //Debug.Log("Snapped!");
                 transform.position = other.gameObject.transform.position; // set position to SnapPoint (constantly)
                 rbody.isKinematic = true;
-                HyperSnap = true;
-            }
-            else if (HyperSnap == true && PickupItem == true)
-            {
-                transform.position = SnapPoint.transform.position;
             }
             else
             {
-                HyperSnap = false;
                 rbody.isKinematic = false;
             }
         }
+    }
+
+    void OnTriggerExit()
+    {
+        Debug.Log("Update Drop Object");
+        GameObject Player = GameObject.Find("AdvancedPlayer");
+        PlayerInteractions playerScript = Player.GetComponent<PlayerInteractions>();
+        PickupItem = playerScript.Pickup;
+        //playerScript.Pickup = false;
+        //PickupItem = false;
     }
 }
