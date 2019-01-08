@@ -74,11 +74,13 @@ public class NightlightController : MonoBehaviour {
                     charging = false;
                     print("Dying");
                 }
+              
                 if (other.gameObject == charger[0])
                 {
                     charging = false;
-                    print("Dying");
-                    print("DoorUnlocked");
+                    GameManager.Instance.Door1Locked = false;
+
+
                 }
             }
         }
