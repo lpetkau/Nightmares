@@ -26,6 +26,8 @@ public class NightlightController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+        Debug.Log(lightStrength);
         if (charging && lightStrength <= 1)
         {
             Charging();
@@ -53,7 +55,7 @@ public class NightlightController : MonoBehaviour {
                 if (other.gameObject == charger[2])
                 {
                     charging = true;
-                    print("BYE SPIDER");
+                    
                     Spidey.SetActive(false);
                     Spidey1.SetActive(false);
                 }
@@ -90,7 +92,7 @@ public class NightlightController : MonoBehaviour {
 
     private void Dying()
     {
-        lightStrength -= deathRate * Time.deltaTime;
+        lightStrength -= deathRate * Time.deltaTime / 13;
     }
 
     private void Charging()

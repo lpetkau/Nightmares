@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class OpenDoor5 : MonoBehaviour
 {
-
     private bool CanInteract = true;
     private bool IsOpen = true;
 
@@ -14,6 +13,10 @@ public class OpenDoor5 : MonoBehaviour
         {
             if (GameManager.Instance.Door5Locked == false)
             {
+                if (Input.GetButton("Interact"))
+                {
+                    print("interact");
+                }
                 if (Input.GetButton("Interact") && CanInteract == true)
                 {
                     Debug.Log("Interact with Door");
