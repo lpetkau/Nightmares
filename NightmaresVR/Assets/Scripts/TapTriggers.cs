@@ -8,12 +8,16 @@ public class TapTriggers : MonoBehaviour
     public Transform Spawnpoint;
     public GameObject Prefab;
     public GameObject uiObject;
+    public GameObject uiObject2;
 
     void Start()
     {
 
-        uiObject.SetActive(false);
+    
+
+       uiObject.SetActive(false);
         Prefab.SetActive(false);
+        uiObject2.SetActive(false);
     }
 
 
@@ -29,14 +33,16 @@ public class TapTriggers : MonoBehaviour
 
             Prefab.SetActive(true);
             uiObject.SetActive(true);
+            uiObject2.SetActive(true);
             StartCoroutine("WaitForSec");
         }
     }
 
     IEnumerator WaitForSec()
     {
-        yield return new WaitForSeconds(20);
+        yield return new WaitForSeconds(10);
         Destroy(uiObject);
+        Destroy(uiObject2);
         Destroy(gameObject);
 
     }

@@ -8,6 +8,7 @@ public class ScrollScript : MonoBehaviour
 
     [SerializeField] private Image customImage;
 
+
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -23,9 +24,15 @@ public class ScrollScript : MonoBehaviour
             customImage.enabled = false;
         }
     }
+
 }
+
+
 	
-    
-    
-    
-  
+
+
+ 
+ 
+ 
+
+
