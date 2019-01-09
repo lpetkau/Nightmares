@@ -16,7 +16,7 @@ public class Lightining : MonoBehaviour
     {
 
         
-        float num = Random.Range(5, 10);
+        float num = Random.Range(45, 120);
         yield return new WaitForSeconds(num);
      
         Isrunning = false;
