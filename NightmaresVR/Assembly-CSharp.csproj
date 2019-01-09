@@ -235,6 +235,7 @@
      <Compile Include="Assets\Scripts\HintScript.cs" />
      <Compile Include="Assets\Scripts\ItemReturn.cs" />
      <Compile Include="Assets\Scripts\LightDetection.cs" />
+     <Compile Include="Assets\Scripts\Lightining.cs" />
      <Compile Include="Assets\Scripts\Locks.cs" />
      <Compile Include="Assets\Scripts\mentalHealth.cs" />
      <Compile Include="Assets\Scripts\mentalHealth1.cs" />
