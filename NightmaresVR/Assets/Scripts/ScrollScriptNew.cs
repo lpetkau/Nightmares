@@ -24,7 +24,7 @@ public class ScrollScriptNew : MonoBehaviour
 
     IEnumerator WaitForSec()
     {
-        yield return new WaitForSeconds(15);
+        yield return new WaitForSeconds(20);
         Destroy(uiObject);
         Destroy(gameObject);
 
