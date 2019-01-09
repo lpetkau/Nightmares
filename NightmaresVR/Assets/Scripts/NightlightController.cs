@@ -10,10 +10,13 @@ public class NightlightController : MonoBehaviour {
 
     private float lightStrength;
 
+    bool Playedonce = false;
     public float deathRate;
     public float chargeRate;
     public GameObject Spidey;
     public GameObject Spidey1;
+    public AudioSource Dock;
+    public AudioSource SpiderDeath;
 
     private bool charging;
 
@@ -51,13 +54,17 @@ public class NightlightController : MonoBehaviour {
                 {
                     charging = true;
                     print("CHARGING");
+                    Dock.Play();
                 }
-                if (other.gameObject == charger[2])
+                if (other.gameObject == charger[2] && Playedonce == false)
                 {
-                    charging = true;
-                    
+
+                    SpiderDeath.Play();
+                      charging = true;
                     Spidey.SetActive(false);
                     Spidey1.SetActive(false);
+                    Playedonce = true;
+                   
                 }
             }
         }
@@ -75,12 +82,15 @@ public class NightlightController : MonoBehaviour {
                 {
                     charging = false;
                     print("Dying");
+                    Dock.Play();
                 }
-              
+
                 if (other.gameObject == charger[0])
                 {
                     charging = false;
                     GameManager.Instance.Door1Locked = false;
+
+                    
 
 
                 }

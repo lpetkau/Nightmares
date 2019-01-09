@@ -4,8 +4,13 @@ using UnityEngine;
 
 public class Lightining : MonoBehaviour
 {
+
     public GameObject Lightning1;
     public bool Isrunning = false;
+    public AudioSource short1;
+    public AudioSource Medium1;
+    public AudioSource Long1;
+
 
     IEnumerator WaitTime()
     {
@@ -26,8 +31,10 @@ public class Lightining : MonoBehaviour
         Lightning1.SetActive(true);
         float num = Random.Range(.1f, .3f);
         yield return new WaitForSeconds(num);
-        Lightning1.SetActive(false);   
-
+        Lightning1.SetActive(false);
+         num = Random.Range(.1f, .3f);
+        yield return new WaitForSeconds(num);
+        short1.Play();
     }
     IEnumerator Strike2()
     {
@@ -44,7 +51,10 @@ public class Lightining : MonoBehaviour
         num = Random.Range(.1f, .3f);
         yield return new WaitForSeconds(num);
         Lightning1.SetActive(false);
-        
+        num = Random.Range(.1f, .3f);
+        yield return new WaitForSeconds(num);
+        Medium1.Play();
+
 
     }
     IEnumerator Strike3()
@@ -68,7 +78,10 @@ public class Lightining : MonoBehaviour
         Lightning1.SetActive(true);
         num = Random.Range(.1f, .3f);
         yield return new WaitForSeconds(num);
-        Lightning1.SetActive(false); 
+        Lightning1.SetActive(false);
+        num = Random.Range(.1f, .3f);
+        yield return new WaitForSeconds(num);
+        Long1.Play();
 
     }
     // Update is called once per frame
