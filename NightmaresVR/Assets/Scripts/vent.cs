@@ -6,9 +6,16 @@ public class vent : MonoBehaviour {
 
     public AudioSource VentFall;
     bool PlayedOnce = false;
-	
-	// Update is called once per frame
-	void Update () {
+
+    PickupObject pickupScript; // Pickup Objects script reference
+
+    private void Start()
+    {
+        pickupScript = GetComponent<PickupObject>();
+    }
+
+    // Update is called once per frame
+    void Update () {
        
 
 		if(GameManager.Instance.BRScrews == 4)
@@ -17,11 +24,12 @@ public class vent : MonoBehaviour {
            
             gameObject.tag = "Grab";
             gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
-                 if (PlayedOnce == false)
-        {
-            VentFall.Play();
-            PlayedOnce = true;
-        }
+            if (PlayedOnce == false)
+            {
+                VentFall.Play();
+                PlayedOnce = true;
+            }
+            pickupScript.canGrab = true;
          
         }
 	}
