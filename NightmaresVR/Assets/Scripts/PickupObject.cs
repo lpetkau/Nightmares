@@ -12,9 +12,15 @@ public class PickupObject : MonoBehaviour {
     Transform SnapPoint;
     Transform KeyRing;
 
+    public bool canGrab = true;
+
 	// Use this for initialization
 	void Start () {
         rb = GetComponent<Rigidbody>();
+        if(this.gameObject.name == "Vent")
+        {
+            canGrab = false;
+        }
     }
 
     void OnTriggerStay(Collider other)
@@ -42,7 +48,7 @@ public class PickupObject : MonoBehaviour {
                 this.transform.parent = null;
             }
         }
-        else if (PickupName == this.gameObject.name) // regular GRAB object
+        else if (PickupName == this.gameObject.name && canGrab) // regular GRAB object
         {
             if (other.gameObject.tag == "SnapPoint" && PickupItem == true)
             {
