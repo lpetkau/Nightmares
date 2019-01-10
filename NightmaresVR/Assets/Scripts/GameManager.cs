@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR;
 
 public class GameManager : MonoBehaviour {
 
@@ -28,10 +29,22 @@ public class GameManager : MonoBehaviour {
     public bool Door4Locked = true;
     public bool Door5Locked = false;
 
+    public bool VRConnected = false;
+
 
     private void Awake()
     {
         DontDestroyOnLoad(this);
         _Instance = this;
+    }
+
+    public void Start()
+    {
+        if (XRDevice.isPresent)
+        {
+            VRConnected = true;
+        }
+        else
+            VRConnected = false;
     }
 }

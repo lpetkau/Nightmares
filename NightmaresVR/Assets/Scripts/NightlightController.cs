@@ -30,7 +30,7 @@ public class NightlightController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        Debug.Log(lightStrength);
+        //Debug.Log(lightStrength);
         if (charging && lightStrength <= 1)
         {
             Charging();
@@ -88,11 +88,7 @@ public class NightlightController : MonoBehaviour {
                 if (other.gameObject == charger[0])
                 {
                     charging = false;
-                    GameManager.Instance.Door1Locked = false;
-
-                    
-
-
+                    GameManager.Instance.Door1Locked = false;         
                 }
             }
         }

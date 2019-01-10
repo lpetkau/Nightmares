@@ -4,21 +4,45 @@ using UnityEngine;
 
 public class PlayerInteractions : MonoBehaviour {
 
+    public AudioSource dropCrowbar;
+    public AudioSource dropHeavyItem;
+    public AudioSource dropLightItem;
+
     public Vector3 direction;
     public RaycastHit hit;
     public float maxDistance = 100;
     public LayerMask layermask;
 
     private Transform SnapPoint; // snapPoint for the Item
+    private int scrollLimit; //Maximum times player can scroll object away/closer
+
     private Transform Item; // object your holding/picking up
     public bool Pickup = false; // bool for determining if to drop or hold
     public float fixedRotation = 0;
     public string ItemName = "";
     //private bool HoldingItem = false;
 
+    private void Start()
+    {
+        SnapPoint = GameObject.FindGameObjectWithTag("SnapPoint").GetComponent<Transform>();
+    }
     // Update is called once per frame
     void Update () {
-		
+		if(Pickup == true)
+        {
+            if(Input.GetAxis("Mouse ScrollWheel") > 0.1)
+            {
+
+                SnapPoint.Translate(Vector3.forward * 0.5f);
+
+                print("Mouse up");
+            }
+            if(Input.GetAxis("Mouse ScrollWheel") < -0.1)
+            {
+                SnapPoint.Translate(-Vector3.forward * 0.5f);
+                print("Mouse down");
+            }
+        }
         if (Input.GetButtonDown("Pickup")) // F
         {
             // toggle Pickup true/false
@@ -89,6 +113,22 @@ public class PlayerInteractions : MonoBehaviour {
                     {
                         Debug.Log("Droping Item");
                         Item.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None; // remove all constraints
+
+                        if (ItemName == "Crowbar")
+                        {
+                            dropCrowbar.Play();
+                        }
+                        else if (ItemName == "LAMP" || ItemName == "FancyLamp" || ItemName == "FancyLamp (1)" || ItemName == "FANCYLAMP") // list all heavy items
+                        {
+                            dropHeavyItem.Play();
+
+                        }
+                        else
+                        {
+                            dropLightItem.Play();
+                        }
+
+
                     }
                     else // No Item to Pickup
                     {

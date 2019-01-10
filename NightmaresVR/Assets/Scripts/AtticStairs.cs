@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class AtticStairs : MonoBehaviour {
 
+    public AudioSource atticStairs;
+    //public AudioSource atticEndOpening;
+
     public Transform TopTeleport;
     public Transform BotTeleport;
     private bool TeleToTop = true;
@@ -23,6 +26,9 @@ public class AtticStairs : MonoBehaviour {
         {
             this.gameObject.GetComponentInChildren<Stairs_Top>().SetDesiredOpen();
             Invoke("EnableTeleport", 2.0f);
+           // Invoke("PlaySound", 0.5f);
+            atticStairs.Play();
+
         }
         else if (TopState == true)
         {
@@ -41,6 +47,7 @@ public class AtticStairs : MonoBehaviour {
 
     void OnTriggerStay()
     {
+        Debug.Log("In Range");
         if (Input.GetButton("Interact") && TeleportEnabled == true)
         {
             if (DelayActive == false)
@@ -80,5 +87,10 @@ public class AtticStairs : MonoBehaviour {
     {
         DelayActive = false;
     }
+
+    //void PlaySound()
+    //{
+    //    atticEndOpening.Play();
+    //}
 
 }

@@ -34,7 +34,7 @@ public class PickupObject : MonoBehaviour {
                 //Debug.Log("Snapped!");
                 transform.position = other.gameObject.transform.position; // set position to SnapPoint (constantly)
                 rbody.isKinematic = true;
-                this.transform.parent = Player.transform;
+                this.transform.parent = SnapPoint.transform;
             }
             else
             {
@@ -49,7 +49,7 @@ public class PickupObject : MonoBehaviour {
                 //Debug.Log("Snapped!");
                 transform.position = other.gameObject.transform.position; // set position to SnapPoint (constantly)
                 rbody.isKinematic = true;
-                this.transform.parent = Player.transform;
+                this.transform.parent = SnapPoint.transform;
             }
             else
             {
