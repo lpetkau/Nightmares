@@ -7,6 +7,7 @@ public class screw : MonoBehaviour {
     
     public GameObject Screw;
     public GameObject ScrewDriver;
+    public AudioSource Unscrewing;
 
     bool screwed = false;
     bool Screwedonce = false;
@@ -28,6 +29,7 @@ public class screw : MonoBehaviour {
     {
         if (Screwedonce == true)
         {
+           
             Screw.transform.Rotate(Vector3.forward * 600 * Time.deltaTime);
         }
 
@@ -64,6 +66,7 @@ public class screw : MonoBehaviour {
             case "Screwdriver_Cross":
                 if (Screwedonce == false)
                 {
+                    Unscrewing.Play();
                     screwed = true;
                     Screwedonce = true;
                     Debug.Log("Collided");
