@@ -9,7 +9,7 @@ public class MentalHealtheffects : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        Debug.Log(GameManager.Instance.MentalHealth);
+        //Debug.Log(GameManager.Instance.MentalHealth);
 
 		if(GameManager.Instance.MentalHealth < 50)
         {

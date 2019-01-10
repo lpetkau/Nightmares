@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class PlayerInteractions : MonoBehaviour {
 
+    public AudioSource dropCrowbar;
+    public AudioSource dropHeavyItem;
+    public AudioSource dropLightItem;
+
     public Vector3 direction;
     public RaycastHit hit;
     public float maxDistance = 100;
@@ -109,6 +113,22 @@ public class PlayerInteractions : MonoBehaviour {
                     {
                         Debug.Log("Droping Item");
                         Item.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None; // remove all constraints
+
+                        if (ItemName == "Crowbar")
+                        {
+                            dropCrowbar.Play();
+                        }
+                        else if (ItemName == "LAMP" || ItemName == "FancyLamp" || ItemName == "FancyLamp (1)" || ItemName == "FANCYLAMP") // list all heavy items
+                        {
+                            dropHeavyItem.Play();
+
+                        }
+                        else
+                        {
+                            dropLightItem.Play();
+                        }
+
+
                     }
                     else // No Item to Pickup
                     {

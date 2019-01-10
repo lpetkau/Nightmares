@@ -257,6 +257,7 @@
      <Compile Include="Assets\Scripts\Stairs_Bot.cs" />
      <Compile Include="Assets\Scripts\Stairs_Top.cs" />
      <Compile Include="Assets\Scripts\TapTriggers.cs" />
+     <Compile Include="Assets\Scripts\toiletFlush.cs" />
      <Compile Include="Assets\Scripts\vent.cs" />
      <Compile Include="Assets\ShadowDetect\Scripts\Cameras\DragMouseOrbit.cs" />
      <Compile Include="Assets\ShadowDetect\Scripts\DebugTool\FPSCounter.cs" />
