@@ -80,7 +80,7 @@ public class vp_FPInput : vp_Component
         rightHand = GameObject.FindGameObjectWithTag("RightHand");
         leftHand = GameObject.FindGameObjectWithTag("LeftHand");
         
-        if (XRDevice.isPresent)
+        if (GameManager.Instance.VRConnected)
         {
             leftHand.SetActive(true);
             rightHand.SetActive(true);
@@ -202,11 +202,7 @@ public class vp_FPInput : vp_Component
 	protected virtual void InputRun()
 	{
 
-		if (vp_Input.GetButton("Run")		// sprint using the left gamepad trigger
-			)
-			FPPlayer.Run.TryStart();
-		else
-			FPPlayer.Run.TryStop();
+		
 
 	}
 
@@ -287,10 +283,7 @@ public class vp_FPInput : vp_Component
 	{
 
 		// zoom / ADS
-		if (vp_Input.GetButton("Zoom"))
-			FPPlayer.Zoom.TryStart();
-		else
-			FPPlayer.Zoom.TryStop();
+		
 
 		// toggle 3rd person mode
 		if (vp_Input.GetButtonDown("Toggle3rdPerson"))
