@@ -27,7 +27,7 @@ public class Lightining : MonoBehaviour
     IEnumerator Strike1()
     {
 
-        Debug.Log("Strike1");
+
         Lightning1.SetActive(true);
         float num = Random.Range(.1f, .3f);
         yield return new WaitForSeconds(num);
@@ -39,7 +39,7 @@ public class Lightining : MonoBehaviour
     IEnumerator Strike2()
     {
 
-        Debug.Log("Strike21");
+        
         float num = Random.Range(.1f, .3f);
         Lightning1.SetActive(true);
         yield return new WaitForSeconds(num);
@@ -60,7 +60,7 @@ public class Lightining : MonoBehaviour
     IEnumerator Strike3()
     {
 
-        Debug.Log("Strike31");
+       
         float num = Random.Range(.1f, .3f);
         Lightning1.SetActive(true);
         yield return new WaitForSeconds(num);

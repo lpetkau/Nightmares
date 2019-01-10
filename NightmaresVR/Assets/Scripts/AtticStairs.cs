@@ -47,7 +47,7 @@ public class AtticStairs : MonoBehaviour {
 
     void OnTriggerStay()
     {
-        Debug.Log("In Range");
+        
         if (Input.GetButton("Interact") && TeleportEnabled == true)
         {
             if (DelayActive == false)

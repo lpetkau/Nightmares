@@ -67,7 +67,7 @@ public class PickupObject : MonoBehaviour {
 
     void OnTriggerExit()
     {
-        Debug.Log("Update Drop Object");
+        
         GameObject Player = GameObject.Find("AdvancedPlayer");
         PlayerInteractions playerScript = Player.GetComponent<PlayerInteractions>();
         PickupItem = playerScript.Pickup;
