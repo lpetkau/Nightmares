@@ -9,6 +9,7 @@ public class TapTriggers : MonoBehaviour
     public GameObject Prefab;
     public GameObject uiObject;
     public GameObject uiObject2;
+    public GameObject blood;
 
     void Start()
     {
@@ -40,10 +41,14 @@ public class TapTriggers : MonoBehaviour
 
     IEnumerator WaitForSec()
     {
+        blood.SetActive(true);
         yield return new WaitForSeconds(10);
         Destroy(uiObject);
         Destroy(uiObject2);
         Destroy(gameObject);
+        
+        yield return new WaitForSeconds(5);
+        blood.SetActive(true);
 
     }
 }

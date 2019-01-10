@@ -88,11 +88,7 @@ public class NightlightController : MonoBehaviour {
                 if (other.gameObject == charger[0])
                 {
                     charging = false;
-                    GameManager.Instance.Door1Locked = false;
-
-                    
-
-
+                    GameManager.Instance.Door1Locked = false;         
                 }
             }
         }
