@@ -53,7 +53,7 @@ public class NightlightController : MonoBehaviour {
                 if (other.gameObject == charger[i])
                 {
                     charging = true;
-                    print("CHARGING");
+                    
                     Dock.Play();
                 }
                 if (other.gameObject == charger[2] && Playedonce == false)
