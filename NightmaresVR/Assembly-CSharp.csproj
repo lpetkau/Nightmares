@@ -250,6 +250,7 @@
      <Compile Include="Assets\Scripts\PlayerInteractions.cs" />
      <Compile Include="Assets\Scripts\PlayerManager.cs" />
      <Compile Include="Assets\Scripts\PlaySound.cs" />
+     <Compile Include="Assets\Scripts\PlayVideo.cs" />
      <Compile Include="Assets\Scripts\screw.cs" />
      <Compile Include="Assets\Scripts\Screwdrivers.cs" />
      <Compile Include="Assets\Scripts\ScrollScript.cs" />
