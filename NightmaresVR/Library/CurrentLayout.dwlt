@@ -44,7 +44,7 @@ MonoBehaviour:
   m_MinSize: {x: 683, y: 492}
   m_MaxSize: {x: 14004, y: 14042}
   vertical: 1
-  controlID: 116
+  controlID: 72
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -68,7 +68,7 @@ MonoBehaviour:
   m_MinSize: {x: 683, y: 492}
   m_MaxSize: {x: 14004, y: 14042}
   vertical: 0
-  controlID: 117
+  controlID: 73
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -87,8 +87,8 @@ MonoBehaviour:
     y: 0
     width: 346
     height: 827
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 277, y: 71}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
@@ -232,7 +232,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 492}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
-  controlID: 118
+  controlID: 74
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -256,7 +256,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 221}
   m_MaxSize: {x: 8006, y: 4021}
   vertical: 0
-  controlID: 119
+  controlID: 75
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -346,20 +346,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs/Images
+    - Assets/Scripts
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Prefabs/Images
+  - Assets/Scripts
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\meaga\OneDrive\Desktop\Unity Final Project\NightmaresNEW\NightmaresVR
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 439}
-    m_SelectedIDs: 220d0000
-    m_LastClickedID: 3362
-    m_ExpandedIDs: 00000000a60c0000ea0f0000d21000008011000008120000d413000026140000721600003e190000301b00004c1c0000d21c0000641d0000fc1d00007a1e0000861f0000262300003a280000922b000036340000cc340000103600004836000070360000f636000050370000de380000e0380000a8390000b23a0000b83a0000d23e0000363f0000a23f0000de4000000641000064440000244500005a450000da4a0000804d0000124e0000984f000024500000d6500000e250000014510000f65100003c7b00003e7b0000407b0000427b0000447b0000467b0000487b00004a7b00004c7b00004e7b0000507b0000527b0000547b0000567b0000587b00005a7b00005c7b00005e7b0000607b000000ca9a3b
+    scrollPos: {x: 0, y: 1079}
+    m_SelectedIDs: ae190000
+    m_LastClickedID: 6574
+    m_ExpandedIDs: 00000000a60c0000ea0f0000d21000008011000008120000d413000026140000721600003e190000301b00004c1c0000d21c0000641d0000fc1d00007a1e0000861f0000262300003c280000942b000038340000ce340000123600004a36000072360000f836000052370000e0380000e2380000aa390000b43a0000ba3a0000d43e0000383f0000a43f0000e04000000841000066440000264500005c450000de4a0000844d0000164e00009c4f000028500000da500000e650000018510000fa510000329a0000349a0000369a0000389a00003a9a00003c9a00003e9a0000409a0000429a0000449a0000469a0000489a00004a9a00004c9a00004e9a0000509a0000529a0000549a0000569a000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -387,7 +387,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000a60c0000ea0f0000d21000008011000008120000d413000026140000721600003e190000301b00004c1c0000d21c0000641d0000fc1d00007a1e0000861f0000262300003a280000922b000036340000cc340000103600004836000070360000f636000050370000de380000e0380000a8390000b23a0000b83a0000d23e0000363f0000a23f0000de4000000641000064440000244500005a450000da4a0000804d0000124e0000984f000024500000d6500000e250000014510000f65100003c7b00003e7b0000407b0000427b0000447b0000467b0000487b00004a7b00004c7b00004e7b0000507b0000527b0000547b0000567b0000587b00005a7b00005c7b00005e7b0000607b0000
+    m_ExpandedIDs: 00000000a60c0000ea0f0000d21000008011000008120000d413000026140000721600003e190000301b00004c1c0000d21c0000641d0000fc1d00007a1e0000861f0000262300003c280000942b000038340000ce340000123600004a36000072360000f836000052370000e0380000e2380000aa390000b43a0000ba3a0000d43e0000383f0000a43f0000e04000000841000066440000264500005c450000de4a0000844d0000164e00009c4f000028500000da500000e650000018510000fa510000329a0000349a0000369a0000389a00003a9a00003c9a00003e9a0000409a0000429a0000449a0000469a0000489a00004a9a00004c9a00004e9a0000509a0000529a0000549a0000569a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -439,7 +439,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 0}
+    m_ScrollPosition: {x: 0, y: 87}
     m_GridSize: 64
   m_DirectoriesAreaWidth: 115
 --- !u!114 &15
@@ -502,10 +502,10 @@ MonoBehaviour:
     height: 535
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
-    scrollPos: {x: 0, y: 1446}
-    m_SelectedIDs: 1cb50000
-    m_LastClickedID: 46364
-    m_ExpandedIDs: 9e77ffffba82ffffe4fbffff0000000028b00000c4b30000d8b300000eb5000058b5000072b6000042b80000c4b800001ebb0000aabe000024bf000080c00000
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: 16090000
+    m_LastClickedID: 0
+    m_ExpandedIDs: e4fbffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -559,9 +559,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 12.6575985, y: 0.28768748, z: -13.642385}
+    m_Target: {x: 13.248495, y: 1.7612215, z: -2.8185534}
     speed: 2
-    m_Value: {x: 12.6575985, y: 0.28768748, z: -13.642385}
+    m_Value: {x: 13.248495, y: 1.7612215, z: -2.8185534}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -589,9 +589,9 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: 0.0067528225, y: 0.96857715, z: -0.026458085, w: 0.24720992}
+    m_Target: {x: -0.022122195, y: 0.7841214, z: 0.027997319, w: 0.61958086}
     speed: 2
-    m_Value: {x: 0.0067528225, y: 0.96857715, z: -0.026458085, w: 0.24720992}
+    m_Value: {x: -0.022122195, y: 0.7841214, z: 0.027997319, w: 0.61958086}
   m_Size:
     m_Target: 14.409036
     speed: 2
@@ -642,10 +642,10 @@ MonoBehaviour:
     m_VRangeLocked: 0
     hZoomLockedByDefault: 0
     vZoomLockedByDefault: 0
-    m_HBaseRangeMin: -307
-    m_HBaseRangeMax: 307
-    m_VBaseRangeMin: -172.66667
-    m_VBaseRangeMax: 172.66667
+    m_HBaseRangeMin: -460.5
+    m_HBaseRangeMax: 460.5
+    m_VBaseRangeMin: -259
+    m_VBaseRangeMax: 259
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -681,7 +681,7 @@ MonoBehaviour:
   m_defaultScale: 1
   m_TargetTexture: {fileID: 0}
   m_CurrentColorSpace: 0
-  m_LastWindowPixelSize: {x: 1522.5, y: 802.5}
+  m_LastWindowPixelSize: {x: 1015, y: 535}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000100000100
