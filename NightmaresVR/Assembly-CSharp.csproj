@@ -231,6 +231,7 @@
      <Compile Include="Assets\Scripts\EnemyController.cs" />
      <Compile Include="Assets\Scripts\EyeLight.cs" />
      <Compile Include="Assets\Scripts\FogParticleSystem.cs" />
+     <Compile Include="Assets\Scripts\ForceCrouch.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\HandGrabbing.cs" />
      <Compile Include="Assets\Scripts\HintScript.cs" />
