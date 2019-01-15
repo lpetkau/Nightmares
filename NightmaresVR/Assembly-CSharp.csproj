@@ -55,6 +55,7 @@
   <ItemGroup>
      <Compile Include="Assets\Breakable Windows\Scripts\BreakableWindow.cs" />
      <Compile Include="Assets\Clock\Scripts\Clock.cs" />
+     <Compile Include="Assets\End.cs" />
      <Compile Include="Assets\LazyFog\Scripts\exampleSceneScript.cs" />
      <Compile Include="Assets\MagicMirror\Demo\DemoScript.cs" />
      <Compile Include="Assets\MagicMirror\Prefab\MirrorCamera_Bathroom.cs" />
@@ -62,7 +63,6 @@
      <Compile Include="Assets\MagicMirror\Prefab\MirrorReflectionScript.cs" />
      <Compile Include="Assets\MagicMirror\Prefab\MirrorScript.cs" />
      <Compile Include="Assets\MagicMirror\Prefab\MirrorScript_Bathroom.cs" />
-     <Compile Include="Assets\MentalHealtheffects.cs" />
      <Compile Include="Assets\Prefabs\Props\3DTOYS\rotatecamera.cs" />
      <Compile Include="Assets\Prefabs\Scripts\Core\Attributes\vp_FloatFieldAttribute.cs" />
      <Compile Include="Assets\Prefabs\Scripts\Core\Attributes\vp_HelpBoxAttribute.cs" />
@@ -242,6 +242,7 @@
      <Compile Include="Assets\Scripts\Locks.cs" />
      <Compile Include="Assets\Scripts\mentalHealth.cs" />
      <Compile Include="Assets\Scripts\mentalHealth1.cs" />
+     <Compile Include="Assets\Scripts\MentalHealtheffects.cs" />
      <Compile Include="Assets\Scripts\NightlightController.cs" />
      <Compile Include="Assets\Scripts\OpenDoor1.cs" />
      <Compile Include="Assets\Scripts\OpenDoor2.cs" />
